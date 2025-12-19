@@ -3,7 +3,7 @@ Este proyecto contiene una herramienta de automatización avanzada en Python dis
 
 📊 Diagrama de Flujo del Proceso de Auditoría
 
-```
+```mermaid
 flowchart TD
     A["🚀 Inicio: autom_tests.py"] --> B{"📂 Lectura de udf_flow_metadata.json"}
     
