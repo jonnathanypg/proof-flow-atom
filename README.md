@@ -4,19 +4,54 @@ Este proyecto contiene una herramienta de automatización avanzada en Python dis
 📊 Diagrama de Flujo del Proceso de Auditoría
 
 ```
-graph TD
-    A[Inicio: Script autom_tests.py] --> B{Lectura de udf_flow_metadata.json}
-    B -- Archivo OK --> C[Fase 1: Análisis de Smartons]
-    B -- No existe --> X[Error: Detener Auditoría]
-    C --> D[Fase 2: Identificación de Variables de Contexto]
-    D --> E[Fase 3: Prueba de Integración HTTP]
-    E --> F{¿Modo --fail activado?}
-    F -- SI --> G[Envío payload con force_plan_b: true]
-    F -- NO --> H[Envío payload estándar]
-    G --> I[Recepción de Respuesta Plan B]
-    H --> J[Recepción de Confirmación Calendar]
-    I --> K[Generación de Reporte Final ✅]
-    J --> K
+flowchart TD
+    A["🚀 Inicio: autom_tests.py"] --> B{"📂 Lectura de udf_flow_metadata.json"}
+    
+    B -- "✅ Archivo encontrado" --> C["Fase 1: Análisis de Smartons"]
+    B -- "❌ No existe" --> X["⛔ Error: Detener Auditoría"]
+    
+    C --> D["Función find_key_recursive<br>en JSON"]
+    D --> E{"🔍 URL HTTP encontrada?"}
+    
+    E -- "❌ No" --> Y["⛔ Error: Sin endpoint Apps Script"]
+    E -- "✅ Sí" --> F["Fase 2: Integración API HTTP<br>Método: POST<br>Timeout: 20s"]
+    
+    F --> G{"⚙️ Modo de operación"}
+    G -- "🟢 Normal (sin --fail)" --> H["📤 Payload estándar<br>Con admin_email_override"]
+    G -- "🔴 --fail activado" --> I["📤 Payload con force_plan_b: true<br>Simulación T07"]
+    
+    H --> J["🔄 Petición a Google Apps Script"]
+    I --> J
+    
+    J --> K{"📥 Estado respuesta HTTP"}
+    K -- "✅ 200 OK" --> L["🔍 Análisis JSON respuesta"]
+    K -- "❌ Error HTTP" --> M["🔴 Error de red"]
+    
+    L --> N{"🔎 Campo success = true?"}
+    N -- "✅ Sí" --> O{"📊 Tipo de respuesta"}
+    N -- "❌ No" --> P["❌ Error en API"]
+    
+    O -- "calendar_status: OK" --> Q["✅ ÉXITO: Cita agendada<br>📅 Google Calendar<br>📄 PDF generado"]
+    O -- "calendar_status: ERROR<br>o force_plan_b activo" --> R["✅ ÉXITO (PLAN B)<br>📄 PDF contingencia<br>🔧 Notificación admin"]
+    
+    Q --> S["Fase 3: Verificación Variables<br>first_name, email, carrera_interes, fecha_cita"]
+    R --> S
+    P --> S
+    M --> S
+    
+    S --> T["📊 Generación Reporte Final"]
+    T --> U["🏁 Auditoría Completada<br>✅/❌ Resultados"]
+    
+    X --> U
+    Y --> U
+
+    style A fill:#4CAF50,stroke:#388E3C,color:white
+    style X fill:#F44336,stroke:#D32F2F,color:white
+    style Y fill:#F44336,stroke:#D32F2F,color:white
+    style U fill:#2196F3,stroke:#1976D2,color:white
+    style I fill:#FF9800,stroke:#F57C00,color:black
+    style Q fill:#8BC34A,stroke:#689F38,color:black
+    style R fill:#FFC107,stroke:#FFA000,color:black
 ```
 
 🛠️ Requisitos Previos
