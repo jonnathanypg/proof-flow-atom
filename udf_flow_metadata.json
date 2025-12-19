@@ -1,0 +1,2385 @@
+{
+  "cells": [
+    {
+      "z": 21,
+      "cellId": "14QTr0xQlahReqYOsncB",
+      "version": "1",
+      "attrs": {
+        "label": {
+          "text": "Inicio de Salto #1"
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "jump": {
+          "data": {
+            "advancedSettings": false,
+            "jumpRepetitions": 1,
+            "connectedFlow": null,
+            "isJumpEnd": true,
+            "initComponentGroup": {
+              "label": "Asesor Académico",
+              "color": "#FFFFFF",
+              "id": "81d56844-b015-4c67-bffa-3f7c9b4a9801",
+              "type": "app.Smarton"
+            }
+          }
+        }
+      },
+      "wasOpened": false,
+      "position": {
+        "x": -5408,
+        "y": 1096
+      },
+      "id": "6fe8b6ea-11cd-460e-8704-ccc4db055de7",
+      "ports": {
+        "items": [
+          {
+            "id": "024109b4-3e82-4638-8f7a-4db50187c541",
+            "group": "in"
+          },
+          {
+            "group": "neutral",
+            "id": "e18654d9-48da-478b-9ffc-26d5931b5c1a"
+          }
+        ]
+      },
+      "size": {
+        "height": 72,
+        "width": 72
+      },
+      "type": "app.Jump"
+    },
+    {
+      "z": 12,
+      "wasOpened": true,
+      "size": {
+        "width": 72,
+        "height": 72
+      },
+      "cellId": "2JXw5Kt0xjrex9h7VVWv",
+      "attrs": {
+        "data": {
+          "commonCfg": {
+            "stages": [],
+            "retries": 3,
+            "fieldOptions": [
+              {
+                "required": true,
+                "id": "41bc529b-b083-4d21-8ebb-246fec201324",
+                "optionalField": {
+                  "active": true,
+                  "id": "zX2W84BzxolRaOJSKtvp_sys",
+                  "isProcessed": true,
+                  "category": "variable",
+                  "readOnly": true,
+                  "position": 0,
+                  "length": 255,
+                  "isSystem": true,
+                  "description": "Nombre completo del cliente. Este campo se utiliza para mostrar el nombre completo en diferentes secciones del sistema.",
+                  "reservedNames": [
+                    "fullName",
+                    "full_name",
+                    "nombre completo",
+                    "nome completo",
+                    "nom complet",
+                    "nombre_completo",
+                    "nome_completo",
+                    "nom_complet",
+                    "full name"
+                  ],
+                  "required": false,
+                  "name": "Nombre completo",
+                  "keyword": "full_name",
+                  "type": "Texto",
+                  "sameAs": null,
+                  "requiredResources": [
+                    "client"
+                  ]
+                }
+              },
+              {
+                "id": "fe9b9f31-e834-46c3-99c9-44a6931293cf",
+                "optionalField": {
+                  "sameAs": null,
+                  "reservedNames": [
+                    "email",
+                    "correo",
+                    "e-mail",
+                    "mail",
+                    "correoelectronico",
+                    "correo electronico",
+                    "email address",
+                    "adresse Courriel",
+                    "endereco email",
+                    "direccionCorreo"
+                  ],
+                  "required": true,
+                  "length": 255,
+                  "position": 4,
+                  "name": "Correo",
+                  "active": true,
+                  "keywordPath": "email",
+                  "readOnly": false,
+                  "type": "Texto",
+                  "category": "variable",
+                  "description": "Extraer el correo electrónico con formato completo usuario@dominio.TLD, siendo obligatorio el uso de un TLD válido. Se deben aceptar tanto dominios públicos (como Gmail, Outlook o Yahoo) como dominios corporativos o personalizados. El correo no debe contener espacios ni caracteres inválidos y debe incluir una extensión TLD estándar, como .com, .net, .org, .io, .co, .mx, .es, entre otras. Solo debe rechazarse si el formato está incompleto o mal formado (por ejemplo, si falta el símbolo @, hay un doble @, falta el TLD o contiene espacios).",
+                  "isSystem": true,
+                  "keyword": "email",
+                  "requiredResources": [
+                    "client"
+                  ],
+                  "id": "fGVGbDhJZxyPea5hH1q2_sys",
+                  "isProcessed": true
+                },
+                "required": true
+              },
+              {
+                "id": "e5a16077-b742-4b72-801d-dedc4cc103e9",
+                "optionalField": {
+                  "id": "PHLqayXSRpat0vw01CYx",
+                  "length": 90,
+                  "updatedAt": {
+                    "_seconds": 1765954910,
+                    "_nanoseconds": 32000000
+                  },
+                  "required": false,
+                  "active": true,
+                  "type": "Texto",
+                  "name": "fecha_cita",
+                  "keyword": "fecha_cita",
+                  "description": "Fecha elegida por el usuario para la reunión. Ej: 2025-12-18",
+                  "category": "predefined_field",
+                  "isSystem": false,
+                  "createdAt": {
+                    "_nanoseconds": 364000000,
+                    "_seconds": 1765954377
+                  },
+                  "typeLength": "Texto (90)"
+                },
+                "required": true
+              },
+              {
+                "optionalField": {
+                  "securityConfig": {
+                    "active": false
+                  },
+                  "isSystem": false,
+                  "description": "Hora de inicio de la reunión. Ej: 11:00",
+                  "keyword": "hora_inicio",
+                  "updatedAt": {
+                    "_seconds": 1765955446,
+                    "_nanoseconds": 115000000
+                  },
+                  "required": false,
+                  "name": "hora_inicio",
+                  "active": true,
+                  "createdAt": {
+                    "_seconds": 1765954377,
+                    "_nanoseconds": 454000000
+                  },
+                  "typeLength": "Texto (90)",
+                  "id": "DKjBQEKVEhgFirExCbQK",
+                  "category": "predefined_field",
+                  "length": 90,
+                  "type": "Texto"
+                },
+                "required": true,
+                "id": "4be31054-0847-43c1-8918-c9b00bdc2503"
+              },
+              {
+                "id": "1942f22f-515f-4927-926c-a4c4de0a270e",
+                "required": true,
+                "optionalField": {
+                  "typeLength": "Texto (90)",
+                  "description": "Hora en la que se culminara la reunión programada. Ej: 12:00",
+                  "active": true,
+                  "isSystem": false,
+                  "length": 90,
+                  "createdAt": {
+                    "_nanoseconds": 406000000,
+                    "_seconds": 1765954377
+                  },
+                  "keyword": "hora_fin",
+                  "updatedAt": {
+                    "_nanoseconds": 611000000,
+                    "_seconds": 1765955511
+                  },
+                  "name": "hora_fin",
+                  "required": false,
+                  "id": "myw8In0ooeWcPkVyCLFd",
+                  "category": "predefined_field",
+                  "type": "Texto"
+                }
+              },
+              {
+                "required": true,
+                "id": "bb85971c-ceab-4cd2-8496-348728d3feb4",
+                "optionalField": {
+                  "typeLength": "Texto (90)",
+                  "description": "Este campo almacena la selección de carrera de interés del usuario. Ej. Ingeniería en sistemas.",
+                  "type": "Texto",
+                  "createdAt": {
+                    "_seconds": 1765954377,
+                    "_nanoseconds": 274000000
+                  },
+                  "active": true,
+                  "updatedAt": {
+                    "_nanoseconds": 415000000,
+                    "_seconds": 1765954597
+                  },
+                  "isSystem": false,
+                  "length": 90,
+                  "name": "carrera_interes",
+                  "id": "a05EiE9gIcfyeWIZVjPF",
+                  "required": false,
+                  "keyword": "carrera_interes"
+                }
+              },
+              {
+                "optionalField": {
+                  "keyword": "custom_telefono_estudiante",
+                  "createdAt": {
+                    "_seconds": 1766179419,
+                    "_nanoseconds": 978000000
+                  },
+                  "updatedAt": {
+                    "_seconds": 1766179419,
+                    "_nanoseconds": 978000000
+                  },
+                  "id": "fQsSYly4Evjvoi73UzL9",
+                  "length": 20,
+                  "required": false,
+                  "securityConfig": {
+                    "active": false
+                  },
+                  "syncWithHubSpot": false,
+                  "type": "Texto",
+                  "name": "telefono_estudiante",
+                  "active": true,
+                  "description": "telefono del usuario",
+                  "category": "predefined_field",
+                  "isSystem": false
+                },
+                "id": "fe5b0ab9-2975-4412-ad90-03c30e331d99",
+                "required": true
+              }
+            ]
+          },
+          "catalogModeCfg": {
+            "catalogs": []
+          },
+          "genericModeCfg": {
+            "modelAI": {
+              "provider": "OpenAI",
+              "id": "gpt40_2",
+              "name": "GPT 4o"
+            },
+            "description": "El agente es un asistente virtual especializado en agendar citas informativas para estudiantes interesados en programas académicos. Se comunica de manera amigable y profesional, utilizando emojis. Sus capacidades incluyen recopilar datos necesarios para la cita y confirmar información. Su enfoque es organizado y metódico, diseñado para estudiantes que buscan orientación académica.",
+            "promptValue": {
+              "values": [
+                "full_name",
+                "date",
+                "custom_telefono_estudiante",
+                "date",
+                "full_name",
+                "email",
+                "carrera_interes",
+                "fecha_cita",
+                "hora_inicio",
+                "hora_fin"
+              ],
+              "body": "[MANDATORY INSTRUCTION]\nDebes preguntarle al usuario por CADA UNO de estos datos de forma individual y secuencial:\n1. Nombre completo\n2. Email\n3. Número de teléfono\n4. Carrera de interés\n5. Fecha de la cita\n6. Hora de la cita\n\nNO puedes omitir ninguna pregunta. NO puedes asumir ningún valor. NO puedes saltarte pasos. Si omites la pregunta de la HORA, habrás fallado tu objetivo.\n\n[Personality and goal]\nEres un asistente especializado en agendar citas informativas para estudiantes interesados en la Universidad. Tu objetivo es recopilar TODOS los datos necesarios de forma amigable y organizada para crear el evento en el calendario y enviar la invitación al correo del estudiante.\n\n[Format]\nTus respuestas serán amigables y profesionales. Máximo 200 palabras por respuesta. Usa emojis apropiados (📅 🕐 📧 📱 ✅ 📋). SIEMPRE pedirás UNA SOLA cosa a la vez y esperarás la respuesta antes de continuar.\n\n[Restriction]\nSolo agendarás citas informativas sobre programas académicos. Solo agendarás citas de lunes a viernes. Horario disponible: 9:00 AM a 6:00 PM. No agendarás citas en fechas pasadas.\n\n[Required Data]\nPara agendar la cita, necesitas recopilar OBLIGATORIAMENTE estos 6 datos:\n1. Nombre completo\n2. Email\n3. Número de teléfono (para contacto por llamada)\n4. Carrera de interés\n5. Fecha de cita (formato: YYYY-MM-DD)\n6. Hora de cita (formato: HH:mm en 24 horas)\n\nCRÍTICO: NO puedes avanzar al resumen sin tener TODOS estos 6 datos explícitamente proporcionados por el usuario.\n\n[Tasks - SEGUIR ESTRICTAMENTE ESTA SECUENCIA]\n\n**PASO 1: RECOPILAR NOMBRE**\nVerifica si ya tienes {{client.full_name}} del contexto.\n- Si NO lo tienes: Pregunta \"Para agendar tu cita, ¿cuál es tu nombre completo?\"\n- Si ya lo tienes: Confirma \"Entiendo que tu nombre es {nombre}, ¿es correcto?\" y espera confirmación.\n\n**PASO 2: RECOPILAR EMAIL**\nSolo después de tener el nombre confirmado, pregunta: \"¿A qué correo electrónico te envío la invitación de la cita? 📧\"\n\n**PASO 3: RECOPILAR TELÉFONO**\nSolo después de tener el email, pregunta: \"¿Cuál es tu número de teléfono para contactarte por llamada? 📱\"\nAcepta formatos: \"+593 99 123 4567\", \"0991234567\", \"099-123-4567\", etc.\n\n**PASO 4: RECOPILAR CARRERA**\nSolo después de tener el teléfono, pregunta: \"¿Sobre qué carrera te gustaría recibir asesoría?\"\n\n**PASO 5: RECOPILAR FECHA**\nSolo después de tener la carrera, pregunta: \"¿Qué día prefieres para tu cita? (Recuerda que agendamos de lunes a viernes). Hoy es {{client.date}}.\"\n\n**PASO 6: RECOPILAR HORA - NO SALTAR ESTE PASO**\nCRÍTICO: Este es el paso que NO DEBES OMITIR bajo ninguna circunstancia.\nSolo después de tener la fecha, pregunta EXPLÍCITAMENTE: \"¿A qué hora te viene mejor? Nuestro horario es de 9:00 AM a 6:00 PM. 🕐\"\nNO asumas ninguna hora por defecto. NO inventes una hora. NO pases al resumen sin haber preguntado la hora.\n\n**PASO 7: MOSTRAR RESUMEN Y PEDIR CONFIRMACIÓN**\nSOLO cuando tengas los 6 datos completos (nombre, email, teléfono, carrera, fecha, hora), muestra el resumen:\n\n\"📋 Confirma los datos de tu cita:\n\n👤 Nombre: {nombre completo}\n📧 Email: {email}\n📱 Teléfono: {teléfono}\n🎓 Carrera: {carrera de interés}\n📅 Fecha: {fecha en formato YYYY-MM-DD}\n🕐 Hora: {hora en formato HH:mm}\n⏱️ Duración: 1 hora\n\n¿Es correcta la información?\"\n\nEspera la confirmación del usuario.\n\n**PASO 8: PROCESAR CONFIRMACIÓN**\n- Si el usuario confirma (dice \"sí\", \"correcto\", \"ok\", \"está bien\", \"confirmo\"): Responde EXACTAMENTE \"Agenda Confirmada\"\n- Si el usuario dice que algo está incorrecto: Pregunta \"¿Qué dato quieres corregir?\" y actualiza solo ese dato, luego vuelve a mostrar el resumen completo y vuelve a pedir confirmación.\n\n[CRITICAL VALIDATION RULES]\nAntes de mostrar el resumen en el PASO 7, verifica INTERNAMENTE que tienes:\n✅ full_name NO está vacío\n✅ email NO está vacío Y contiene \"@\"\n✅ telefono NO está vacío Y contiene números\n✅ carrera_interes NO está vacía\n✅ fecha_cita NO está vacía Y tiene formato YYYY-MM-DD\n✅ hora_inicio NO está vacía Y tiene formato HH:mm\n\nSi ALGUNO de estos datos falta, NO muestres el resumen. En su lugar, pregunta por el dato faltante.\n\n[Phone Number Handling]\nAcepta números de teléfono en cualquier formato común:\n- Con código de país: \"+593 99 123 4567\", \"+593991234567\"\n- Sin código: \"0991234567\", \"099 123 4567\"\n- Con guiones: \"099-123-4567\"\n- Con espacios: \"099 123 4567\"\n\nGuarda el número tal como el usuario lo proporciona en el campo {{client.custom_telefono_estudiante}}. NO lo reformatees a menos que el usuario lo pida.\n\n[Date and Time Handling]\nCuando el usuario mencione fechas o horas:\n\n**Para fechas:**\n- \"mañana\": Calcula sumando 1 día a {{client.date}}\n- \"pasado mañana\": Suma 2 días\n- \"lunes\", \"martes\", \"miércoles\", \"jueves\", \"viernes\": Calcula el próximo día de esa semana basándote en la fecha actual\n- Siempre guarda en formato YYYY-MM-DD\n\n**Para horas:**\n- \"2 PM\", \"2:00 PM\" → 14:00\n- \"3 PM\", \"3:00 PM\" → 15:00\n- \"9 AM\", \"9:00 AM\" → 09:00\n- \"10 AM\", \"10:00 AM\" → 10:00\n- \"14:00\", \"15:00\" → mantener formato\n- Siempre guarda en formato HH:mm (24 horas)\n\n[Automatic Duration Calculation]\nLas citas tienen duración FIJA de 1 hora.\nCuando guardes la hora de inicio, automáticamente calcula y guarda la hora de fin sumando 1 hora:\n- hora_inicio = 09:00 → hora_fin = 10:00\n- hora_inicio = 14:00 → hora_fin = 15:00\n- hora_inicio = 14:30 → hora_fin = 15:30\n- hora_inicio = 17:00 → hora_fin = 18:00\n\nIMPORTANTE: NO menciones la hora de fin al usuario durante las preguntas individuales. Solo muéstrala en el resumen final como \"Duración: 1 hora\".\n\n[Data Extraction]\nSIEMPRE y sin excepción debes extraer y guardar todos los datos en estas variables:\n- Nombre completo → {{client.full_name}}\n- Email → {{client.email}}\n- Teléfono → \n- Carrera de interés → {{client.carrera_interes}}\n- Fecha de cita → {{client.fecha_cita}} (formato: YYYY-MM-DD)\n- Hora de inicio → {{client.hora_inicio}} (formato: HH:mm)\n- Hora de fin → {{client.hora_fin}} (formato: HH:mm, calculada automáticamente)\n\nNO OMITAS NINGÚN DATO. NO ASUMAS NINGÚN VALOR POR DEFECTO. NO INVENTES NINGÚN DATO.\n\n[CRITICAL WORKFLOW CONTROL]\nSigue RIGUROSAMENTE esta secuencia de estados sin saltarte ninguno:\n\n**ESTADO 1: RECOPILANDO DATOS**\n- Estás en este estado mientras no tengas los 6 datos completos\n- Pregunta UNO POR UNO en este orden exacto: nombre → email → teléfono → carrera → fecha → hora\n- NO pases al ESTADO 2 hasta tener TODOS los datos\n- NO digas \"Agenda Confirmada\" en este estado\n- NO actives ninguna intención de salida en este estado\n\n**ESTADO 2: CONFIRMANDO DATOS**\n- Llegas a este estado solo cuando tienes los 6 datos completos\n- Muestras el resumen con los 6 datos\n- Preguntas: \"¿Es correcta la información?\"\n- Esperas respuesta del usuario\n- NO pases al ESTADO 3 hasta que el usuario confirme explícitamente\n- NO digas \"Agenda Confirmada\" en este estado\n\n**ESTADO 3: AGENDA CONFIRMADA**\n- Llegas a este estado SOLO si el usuario confirmó en el ESTADO 2\n- Respondes EXACTAMENTE: \"Agenda Confirmada\"\n- Después de esto, el sistema automáticamente procesará la cita\n- Este es el ÚNICO momento en que debes decir \"Agenda Confirmada\"\n\nREGLAS ABSOLUTAS: NUNCA saltes del ESTADO 1 al ESTADO 3 directamente. NUNCA digas \"Agenda Confirmada\" sin haber mostrado el resumen. NUNCA asumas datos sin haberlos preguntado explícitamente. NUNCA omitas hora o teléfono. La transición ESTADO 1 → ESTADO 2 → ESTADO 3 es obligatoria y secuencial.\n\n[Examples of conversations]\n\n**Example 1 - FLUJO COMPLETO:**\nUsuario: Quiero agendar una cita\nBot: ¡Perfecto! 📅 ¿Cuál es tu nombre completo?\nUsuario: María García\nBot: Gracias María. ¿A qué correo te envío la invitación? 📧\nUsuario: maria@gmail.com\nBot: Excelente. ¿Cuál es tu número de teléfono? 📱\nUsuario: 099 123 4567\nBot: Perfecto. ¿Sobre qué carrera?\nUsuario: Ingeniería de Sistemas\nBot: ¿Qué día prefieres? (Lunes a viernes, hoy es 19 de diciembre de 2025)\nUsuario: Mañana\nBot: ¿A qué hora? Horario de 9:00 AM a 6:00 PM 🕐\nUsuario: 2 PM\nBot: 📋 Confirma:\n👤 Nombre: María García\n📧 Email: maria@gmail.com\n📱 Teléfono: 099 123 4567\n🎓 Carrera: Ingeniería de Sistemas\n📅 Fecha: 2025-12-20\n🕐 Hora: 14:00\n⏱️ Duración: 1 hora\n¿Es correcta la información?\nUsuario: Sí\nBot: Agenda Confirmada\n\n**Example 2 - CON CORRECCIÓN:**\nBot: [Resumen con teléfono 098 765 4321]\n¿Es correcta la información?\nUsuario: No, mi teléfono es incorrecto\nBot: ¿Cuál es el número correcto? 📱\nUsuario: 099 111 2222\nBot: Actualicé tu teléfono. [Nuevo resumen con 099 111 2222]\n¿Ahora sí está correcto?\nUsuario: Sí\nBot: Agenda Confirmada\n\n**Example 3 - MÚLTIPLES DATOS:**\nUsuario: Quiero cita mañana 3 PM Medicina, Ana López\nBot: ¡Perfecto Ana! Mañana 3 PM Medicina. ¿A qué correo te envío la invitación? 📧\nUsuario: ana@mail.com\nBot: ¿Cuál es tu número de teléfono? 📱\nUsuario: 099 888 7777\nBot: [Resumen completo]\n¿Es correcta la información?\nUsuario: Sí\nBot: Agenda Confirmada\n\n**Example 4 - FORMATOS TELÉFONO:**\nBot: ¿Teléfono? 📱\nUsuario: +593 99 123 4567\nBot: Guardé tu teléfono. ¿Carrera...\nUsuario: 0991234567\nBot: Guardé tu teléfono. ¿Carrera...\n\n[SELF-CHECK BEFORE SHOWING SUMMARY]\nAntes de mostrar el resumen:\n1. ¿Tengo full_name?\n2. ¿Tengo email con \"@\"?\n3. ¿Tengo telefono con números?\n4. ¿Tengo carrera_interes?\n5. ¿Tengo fecha_cita YYYY-MM-DD?\n6. ¿Tengo hora_inicio HH:mm?\n7. ¿Calculé hora_fin?\n\nSi NO a cualquiera: pregunta dato faltante. NO resumen. NO \"Agenda Confirmada\".\n\n[SUCCESS]\nUsuario confirma → \"Agenda Confirmada\"\n\nEres el puente entre el estudiante y su futuro académico. ¡Hazlo perfecto! 🎓"
+            },
+            "useCase": {
+              "label": "Agendamiento de cita",
+              "id": "raq7fzA4FkDYlGfsLtBZ",
+              "keyword": "appointments",
+              "description": "Asistente virtual para atención al cliente que responde consultas frecuentes sobre productos y servicios."
+            }
+          },
+          "type": "generic"
+        },
+        "buttons": {
+          "current": []
+        },
+        "label": {
+          "text": "Smarton #2"
+        },
+        "alternativeLabel": {
+          "text": "agendar_cita"
+        }
+      },
+      "id": "4601a005-1f71-4918-bb90-ba8018446b51",
+      "type": "app.Smarton",
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "34f9d0ef-a84e-4d94-8141-4b78a5a08f61"
+          },
+          {
+            "attrs": {
+              "portLabel": {
+                "textAnchor": "middle",
+                "x": 0,
+                "text": "Error de contexto"
+              },
+              "portRemoveButton": {
+                "display": "none"
+              },
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              }
+            },
+            "group": "default",
+            "args": {
+              "x": 175,
+              "y": 180
+            },
+            "id": "88102ee4-2dde-4ab1-a083-f46ea2de8285",
+            "category": "other"
+          },
+          {
+            "group": "out",
+            "id": "405c6243-cbf5-4b6c-9add-b90dcf93df91",
+            "attrs": {
+              "data": {
+                "intentValue": "programar_meet",
+                "intentPrompt": "Esta intención SOLO debe activarse cuando se cumplan TODAS estas condiciones en orden:\n\n1. El bot ha recopilado los 5 datos obligatorios: nombre, email, carrera, fecha, hora\n2. El bot ha mostrado el resumen completo con todos los datos\n3. El bot ha preguntado: \"¿Es correcta la información?\"\n4. El usuario ha confirmado explícitamente (dijo \"sí\", \"correcto\", \"ok\", \"está bien\", \"confirmo\")\n5. El bot ha respondido con el texto EXACTO: \"Agenda Confirmada\"\n\nIMPORTANTE - NO actives esta intención si:\n❌ El bot está preguntando por datos (nombre, email, carrera, fecha, hora)\n❌ El bot está esperando respuestas a preguntas\n❌ El bot está mostrando el resumen pero esperando confirmación\n❌ El usuario aún no ha confirmado los datos\n❌ Faltan datos por recopilar\n❌ El bot no ha dicho \"Agenda Confirmada\"\n\nEjemplos de CUÁNDO SÍ ACTIVAR:\n✅ Bot: \"Agenda Confirmada\" → ACTIVAR AHORA\n✅ Usuario confirmó y bot respondió \"Agenda Confirmada\" → ACTIVAR AHORA\n\nEjemplos de CUÁNDO NO ACTIVAR:\n❌ Usuario: \"Quiero agendar una cita\" → NO ACTIVAR (recién empieza)\n❌ Bot: \"¿Cuál es tu nombre?\" → NO ACTIVAR (recopilando datos)\n❌ Bot: \"¿A qué hora?\" → NO ACTIVAR (recopilando datos)\n❌ Bot: [muestra resumen] \"¿Es correcta la información?\" → NO ACTIVAR (esperando confirmación)\n❌ Usuario: \"Sí\" (después del resumen) → NO ACTIVAR AÚN (falta que bot diga \"Agenda Confirmada\")\n\nLa señal definitiva para activar es: el bot dice textualmente \"Agenda Confirmada\""
+              },
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              },
+              "portLabel": {
+                "text": "Intención: programar_meet"
+              }
+            },
+            "category": "message_body",
+            "args": {
+              "x": -95,
+              "y": 180
+            }
+          }
+        ]
+      },
+      "position": {
+        "y": -120,
+        "x": -5712
+      },
+      "version": "1"
+    },
+    {
+      "size": {
+        "width": 72,
+        "height": 72
+      },
+      "id": "22916696-17b1-4c16-ad6c-816d91549fbc",
+      "attrs": {
+        "alternativeLabel": {
+          "text": ""
+        },
+        "data": {
+          "fieldType": "predefinedField",
+          "value": "Smarton_2: agendar_cita",
+          "currentVariableName": {
+            "isFlowField": true,
+            "name": "etapa_falla",
+            "id": "c895138c-e686-4818-b19a-c816b99adb45",
+            "category": "flow_field",
+            "keyword": "etapa_falla",
+            "displayModules": [],
+            "type": "dynamic",
+            "originComponent": "save_field"
+          },
+          "setField": true
+        },
+        "label": {
+          "text": "Guardar campo #2"
+        }
+      },
+      "cellId": "3gqoMMV5txH9zwmg2PGy",
+      "version": "1",
+      "z": 19,
+      "wasOpened": false,
+      "type": "app.SaveField",
+      "ports": {
+        "items": [
+          {
+            "id": "9d837107-3626-42c9-9160-2f0ce011806d",
+            "group": "in"
+          },
+          {
+            "id": "b2b51ca4-cf86-4cc3-bdec-622d36f7d838",
+            "group": "default",
+            "category": "other"
+          }
+        ]
+      },
+      "position": {
+        "y": 272,
+        "x": -5544
+      }
+    },
+    {
+      "z": -1,
+      "attrs": {},
+      "id": "01ea4899-f3b5-4943-89a9-7b4b49546120",
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "cellId": "4C9wPcGYIi9eiF4cJunV",
+      "target": {
+        "magnet": "portBody",
+        "port": "cfa7b281-da91-4ffa-8903-ed011c9b734e",
+        "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84"
+      },
+      "source": {
+        "id": "22916696-17b1-4c16-ad6c-816d91549fbc",
+        "magnet": "portButton",
+        "port": "b2b51ca4-cf86-4cc3-bdec-622d36f7d838"
+      },
+      "type": "app.Link",
+      "version": "1"
+    },
+    {
+      "version": "1",
+      "size": {
+        "width": 72,
+        "height": 72
+      },
+      "attrs": {
+        "http": {
+          "fieldsToSave": [
+            {
+              "nameError": false,
+              "fieldType": "dynamic",
+              "isFocus": false,
+              "id": "52539ec0-679c-407e-ab9b-b1d42e7f95e7",
+              "responseKey": "htmlLink",
+              "optionalField": {
+                "required": false,
+                "createdAt": {
+                  "_nanoseconds": 274000000,
+                  "_seconds": 1765954377
+                },
+                "active": true,
+                "isSystem": false,
+                "type": "Texto",
+                "id": "a05EiE9gIcfyeWIZVjPF",
+                "keyword": "carrera_interes",
+                "length": 90,
+                "typeLength": "Texto (90)",
+                "description": "Este campo almacena la selección de carrera de interés del usuario. Ej. Ingeniería en sistemas.",
+                "name": "carrera_interes",
+                "updatedAt": {
+                  "_nanoseconds": 415000000,
+                  "_seconds": 1765954597
+                }
+              },
+              "dynamicField": {
+                "originComponent": "http",
+                "type": "dynamic",
+                "displayModules": [],
+                "isFlowField": true,
+                "name": "link_evento",
+                "category": "flow_field",
+                "id": "0619150a-6069-4fd8-a878-f9b45ace58c5",
+                "keyword": "link_evento"
+              }
+            },
+            {
+              "optionalField": {
+                "active": true,
+                "required": false,
+                "name": "carrera_interes",
+                "id": "a05EiE9gIcfyeWIZVjPF",
+                "length": 90,
+                "createdAt": {
+                  "_seconds": 1765954377,
+                  "_nanoseconds": 274000000
+                },
+                "type": "Texto",
+                "updatedAt": {
+                  "_nanoseconds": 415000000,
+                  "_seconds": 1765954597
+                },
+                "typeLength": "Texto (90)",
+                "description": "Este campo almacena la selección de carrera de interés del usuario. Ej. Ingeniería en sistemas.",
+                "keyword": "carrera_interes",
+                "isSystem": false
+              },
+              "responseKey": "pdfLink",
+              "isFocus": false,
+              "nameError": false,
+              "dynamicField": {
+                "id": "4c916592-a237-40fa-85fb-4ff9c1cdcbb2",
+                "originComponent": "http",
+                "keyword": "link_pdf",
+                "type": "dynamic",
+                "displayModules": [],
+                "isFlowField": true,
+                "category": "flow_field",
+                "name": "link_pdf"
+              },
+              "fieldType": "dynamic",
+              "id": "d4457bb0-e6e6-4c60-afda-d7e3277dbdbe"
+            }
+          ],
+          "authConfig": {
+            "type": "NONE",
+            "oauth2": {
+              "scope": "",
+              "tokenUrl": "",
+              "isClientSecretSensitive": true,
+              "clientSecret": "",
+              "clientId": ""
+            },
+            "enabled": false
+          },
+          "optionalFields": {
+            "body": {
+              "replaced": "",
+              "content": "",
+              "values": []
+            },
+            "url": {
+              "values": [],
+              "replaced": "https://script.google.com/macros/s/AKfycbyrvSKmaFBswwf9UrO4n8cHCfMPPbvFBjANXbq7Q7NDkqXYfckXOMsdj39gKrjrfVpA/exec"
+            }
+          },
+          "data": {
+            "url": "https://script.google.com/macros/s/AKfycbyrvSKmaFBswwf9UrO4n8cHCfMPPbvFBjANXbq7Q7NDkqXYfckXOMsdj39gKrjrfVpA/exec",
+            "headers": [
+              {
+                "replaced": {
+                  "values": [],
+                  "body": "application/json"
+                },
+                "isSensitive": false,
+                "value": "application/json",
+                "key": "Content-Type",
+                "id": "3795d5bd-42c7-4c9a-a57a-1ad2d5824d7e",
+                "hasVariables": false
+              }
+            ],
+            "method": "POST",
+            "responseConditions": [
+              {
+                "range": "200",
+                "type": "success",
+                "hasRangeError": false,
+                "isValid": true,
+                "id": "fcb56029-791f-40a5-b97f-5c52d6ca8d19"
+              },
+              {
+                "hasRangeError": false,
+                "type": "failure",
+                "range": "400",
+                "id": "e27c509a-9bad-4c1a-809a-d1cf92cfdca9",
+                "isValid": true
+              }
+            ],
+            "body": {
+              "fechaInicio": "{{client.fecha_cita}}T{{client.hora_inicio}}:00",
+              "force_plan_b": false,
+              "admin_email_override": "darkyx11@gmail.com",
+              "titulo": "Cita con {{client.full_name}} - {{client.carrera_interes}}",
+              "fechaFin": "{{client.fecha_cita}}T{{client.hora_fin}}:00",
+              "invitado": "{{client.email}}",
+              "carrera": "{{client.carrera_interes}}"
+            }
+          }
+        },
+        "label": {
+          "text": "Petición HTTP #1"
+        },
+        "config": {
+          "handleSave": true,
+          "auth": false,
+          "body": true,
+          "handleResponse": true,
+          "headers": true
+        },
+        "alternativeLabel": {
+          "text": "Petición HTTP #1"
+        }
+      },
+      "type": "app.HttpV2",
+      "id": "49c7a843-7339-430b-858c-f5edbff55b4b",
+      "cellId": "4GsYGUJFuvw1RNTCCvUH",
+      "attrs.config.auth": false,
+      "z": 10,
+      "wasOpened": true,
+      "position": {
+        "x": -5888,
+        "y": 144
+      },
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "6aacfbcd-6a90-45da-8e09-a05a28f575e4"
+          },
+          {
+            "attrs": {
+              "portLabel": {
+                "text": "Error",
+                "x": 0,
+                "textAnchor": "middle"
+              },
+              "portRemoveButton": {
+                "display": "none"
+              },
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              }
+            },
+            "group": "default",
+            "args": {
+              "x": 175,
+              "y": 180
+            },
+            "category": "failure",
+            "id": "6c5a62c7-10da-4316-93dc-275a37f88f25"
+          },
+          {
+            "args": {
+              "y": 180,
+              "x": -95
+            },
+            "attrs": {
+              "portLabel": {
+                "text": "Éxito",
+                "x": 0,
+                "textAnchor": "middle"
+              },
+              "portRemoveButton": {
+                "display": "none"
+              },
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              }
+            },
+            "id": "e52e40c0-03f7-4e93-931d-d6a5f2b984eb",
+            "category": "success",
+            "group": "default"
+          }
+        ]
+      }
+    },
+    {
+      "wasOpened": false,
+      "size": {
+        "width": 400,
+        "height": 259.8148193359375
+      },
+      "type": "app.Message",
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "2e5b6031-911b-452a-b519-cfa83bc8e8ea"
+          },
+          {
+            "attrs": {
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              }
+            },
+            "group": "out",
+            "id": "89f9b146-eb64-43cd-824e-a1b36fb2701c",
+            "args": {
+              "x": 190,
+              "y": 259.8148193359375
+            }
+          }
+        ]
+      },
+      "id": "4aa65f27-d70b-4c82-bddf-169e5a9a0bac",
+      "version": "1",
+      "messageChanged": false,
+      "z": 28,
+      "position": {
+        "x": -6832,
+        "y": 736
+      },
+      "attrs": {
+        "label": {
+          "text": "Mensaje #2"
+        },
+        "description": {
+          "values": [
+            "first_name",
+            "fecha_actual",
+            "hora_inicio",
+            "carrera_interes",
+            "link_evento"
+          ],
+          "text": "Listo, first_name hemos completado la programación para el fecha_actual a las hora_inicio, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en carrera_interes.\n\nPuede confirmar tu cita en el siguiente enlace: \nlink_evento",
+          "replacedText": "Listo, {{client.first_name}} hemos completado la programación para el {{client.fecha_actual}} a las {{client.hora_inicio}}, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en {{client.carrera_interes}}.\n\nPuede confirmar tu cita en el siguiente enlace: \n{{flow_field.link_evento}}"
+        },
+        "data": {
+          "info": {
+            "platform": "whatsapp",
+            "text": "Listo, {{client.first_name}} hemos completado la programación para el {{client.fecha_actual}} a las {{client.hora_inicio}}, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en {{client.carrera_interes}}.\n\nPuede confirmar tu cita en el siguiente enlace: \n{{flow_field.link_evento}}",
+            "imgCheck": false,
+            "buttonsCheck": false
+          }
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "selectedOption": {
+          "selected": {
+            "keyword": "interactive_text"
+          }
+        }
+      },
+      "cellId": "4qvQUtumQRBvsjXw7Hz9"
+    },
+    {
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "cellId": "918zmZujDDZJfUEEUJWA",
+      "attrs": {},
+      "id": "d8ed2502-45fd-4191-8f86-b5ee48700db1",
+      "type": "app.Link",
+      "version": "1",
+      "z": -1,
+      "source": {
+        "id": "4aa65f27-d70b-4c82-bddf-169e5a9a0bac",
+        "magnet": "portButton",
+        "port": "89f9b146-eb64-43cd-824e-a1b36fb2701c"
+      },
+      "target": {
+        "id": "fbb82a36-7423-43fd-ba12-c5cd7531ab90",
+        "magnet": "portBody",
+        "port": "5ac817ec-b636-42b8-8817-e0f5ef0dea8b"
+      }
+    },
+    {
+      "type": "app.Link",
+      "id": "54fefad3-d024-484a-af9c-f46ddccd3dc6",
+      "source": {
+        "port": "d7360455-48a6-491a-8897-4b5004807e7a",
+        "id": "81d56844-b015-4c67-bffa-3f7c9b4a9801",
+        "magnet": "portButton"
+      },
+      "attrs": {},
+      "z": -1,
+      "version": "1",
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "buttonChecked": false,
+                "repetitions": 0
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "cellId": "9DJ8muQwaPvtmYVtisVn",
+      "target": {
+        "id": "83baa2be-cc94-4aa9-821e-e601bcbd67bd",
+        "port": "7f6cabf9-7bd6-4a1f-8855-b6c838640015",
+        "magnet": "portBody"
+      }
+    },
+    {
+      "id": "3104a4ea-f13b-4811-97c0-90be9adf2712",
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          }
+        }
+      ],
+      "source": {
+        "id": "83baa2be-cc94-4aa9-821e-e601bcbd67bd",
+        "port": "ba43d4b9-00f6-4b7f-8477-c823c810e7e5",
+        "magnet": "portButton"
+      },
+      "z": -1,
+      "target": {
+        "magnet": "portBody",
+        "port": "cfa7b281-da91-4ffa-8903-ed011c9b734e",
+        "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84"
+      },
+      "attrs": {},
+      "type": "app.Link",
+      "version": "1",
+      "cellId": "AN0qyECG7bou5QKrOhct"
+    },
+    {
+      "position": {
+        "y": -392,
+        "x": -5368
+      },
+      "wasOpened": false,
+      "z": 7,
+      "id": "81d56844-b015-4c67-bffa-3f7c9b4a9801",
+      "version": "1",
+      "type": "app.Smarton",
+      "attrs": {
+        "alternativeLabel": {
+          "text": "Asesor Académico"
+        },
+        "label": {
+          "text": "Smarton #1"
+        },
+        "data": {
+          "genericModeCfg": {
+            "modelAI": {
+              "id": "gpt40_2",
+              "name": "GPT 4o",
+              "provider": "OpenAI"
+            },
+            "documents": [
+              {
+                "path": "/companies/Fv2ZycFcUGtW6mywlsNC/flow_multimedia/1766120720850_Universidad_del_futuro_doc_base.pdf",
+                "mediaType": "application/pdf",
+                "fileName": "Universidad_del_futuro_doc_base.pdf",
+                "description": "Documento con la base de la verdad sobre la Universidad para el Asesor Académico",
+                "mediaUrl": "https://firebasestorage.googleapis.com/v0/b/atomchat-io.appspot.com/o/companies%2FFv2ZycFcUGtW6mywlsNC%2Fflow_multimedia%2F1766120720850_Universidad_del_futuro_doc_base.pdf?alt=media&token=8231e43e-a13c-4976-9f8c-24534342546f",
+                "documentId": "e3bdf42d-a000-4a33-8fa7-f58561c82952",
+                "type": "file"
+              }
+            ],
+            "useCase": {
+              "id": "8ajePZOq7emUpNNODEFK",
+              "label": "Preguntas frecuentes",
+              "description": "Asistente virtual para atención al cliente que responde consultas frecuentes sobre productos y servicios.",
+              "keyword": "faq"
+            },
+            "description": "Este agente actúa como asesor académico universitario, especializado en carreras y requisitos de admisión. Su comunicación es amigable y profesional, utilizando un estilo motivador. Puede proporcionar información precisa, organizarla en listas y agendar citas. Se enfoca en prospectos interesados en educación superior.",
+            "promptValue": {
+              "body": "[Personality and goal]\nTu nombre es Sofia y eres una asesora académica especializada en admisiones y programas universitarios. Tu objetivo es ayudar a estudiantes prospectos usando ÚNICAMENTE la información del documento base adjunto. Serás informativa, alentadora y guiarás a los estudiantes hacia agendar una cita de asesoría personalizada. Cuando un usuario exprese interés en agendar, activarás la intención de salida \"agendar_cita\" que conecta con el Smarton de agendamiento.\n\nIMPORTANTE: Este Smarton es parte de un sistema integrado. Cuando un usuario exprese interés en agendar una cita, activarás la intención de salida que conecta con el Smarton de agendamiento, transfiriendo todo el contexto relevante.\n\n[Format]\nTu tono será amigable, profesional y motivador, reflejando entusiasmo por la educación.\n\nTus respuestas tendrán un máximo de 250 palabras.\n\nOrganiza la información en listas con viñetas o párrafos muy breves para facilitar la lectura.\n\nUsa emojis relevantes (ej: 📚, 🎓, ✅, 📅) para hacer la conversación más amena.\n\nHarás solo una pregunta a la vez para guiar la conversación de forma natural.\n\n[Restriction]\nNUNCA inventes programas, requisitos, costos o fechas. Si la información no está en el documento base, di que no la tienes disponible y ofrece agendar una cita para obtener esos detalles.\n\nSi el usuario pregunta sobre temas NO RELACIONADOS con programas académicos, admisiones o vida universitaria básica, responde: \"Disculpa, como asesor académico especializado, solo puedo ayudarte con información sobre nuestras carreras y el proceso de admisión. ¿Te gustaría saber sobre alguno de estos temas?\"\n\n[Knowledge Base Usage - Critical]\nDEBES usar el documento base adjunto como tu ÚNICA fuente de verdad para toda la información sobre:\n- Lista de programas académicos disponibles\n- Detalles de programas (duración, costos, especializaciones, perfil del egresado)\n- Requisitos de admisión (generales y específicos por programa)\n- Pasos del proceso de admisión y cronograma\n- Fechas límite de aplicación y fechas importantes\n- Información de becas y ayuda financiera\n- Instalaciones del campus y servicios estudiantiles\n\nREGLAS CRÍTICAS:\n- Presenta la información EXACTAMENTE como aparece en el documento base\n- Usa la lista COMPLETA de programas cuando te pregunten sobre carreras disponibles\n- Incluye TODOS los requisitos al explicar el proceso de admisión\n- Nunca omitas o resumas información que afecte las decisiones del estudiante\n- Si información específica no está en el documento base, reconócelo y ofrece agendar una cita con un asesor que pueda proporcionar esos detalles\n\n[Available Programs - Complete List]\nCuando el usuario pregunte sobre \"carreras\", \"qué estudiar\", \"oferta académica\", \"programas disponibles\", \"qué puedo estudiar\":\n\n1. Presenta la lista COMPLETA de programas disponibles EXACTAMENTE como aparece en el documento base\n2. No agregues, elimines o modifiques ningún nombre de programa\n3. Agrega una declaración breve y motivadora sobre estudiar en la universidad\n4. Termina preguntando: \"¿Alguna de estas carreras te llama especialmente la atención para darte más detalles?\" 🎯\n\nEstructura de respuesta ejemplo:\n\"¡Claro! 📚 Tenemos una oferta académica muy diversa. Las carreras disponibles son:\n\n[LISTA COMPLETA DEL DOCUMENTO BASE]\n\nCada programa está diseñado con alta calidad académica y oportunidades de desarrollo profesional. ¿Alguna te genera curiosidad para contarte más? 😊\"\n\nCRÍTICO: Nunca asumas o inventes nombres de programas. Siempre extrae la lista completa directamente del documento base.\n\n[Admission Requirements - Complete Information]\nCuando el usuario pregunte sobre \"requisitos\", \"cómo inscribirme\", \"qué necesito\", \"proceso de admisión\", \"cómo me inscribo\":\n\n1. Lista TODOS los requisitos generales de admisión del documento base\n2. Explica los pasos del proceso de forma clara y ordenada\n3. Incluye información sobre:\n   - Documentos requeridos\n   - Prerrequisitos académicos (notas mínimas, puntajes de exámenes)\n   - Cronograma y fechas importantes\n   - Costos asociados con el proceso de aplicación\n4. Si el usuario pregunta sobre un programa específico, incluye requisitos específicos del programa\n5. Termina ofreciendo agendar una cita: \"¿Te gustaría que agendemos una cita para revisar tu perfil y documentos en detalle?\" 📅\n\nCRÍTICO: Proporciona información completa y precisa. No omitas ningún requisito que pueda afectar la aplicación del estudiante. Si un requisito está en el documento base, debe ser comunicado.\n\n[Specific Program Information]\nCuando el usuario pregunte en profundidad sobre un PROGRAMA ESPECÍFICO (ej: \"Ingeniería de Sistemas\", \"Medicina\", \"cuéntame sobre Ingeniería\", \"qué tal Medicina\"):\n\n1. Proporciona detalles específicos de ese programa del documento base:\n   - Duración (semestres/años)\n   - Modalidad (presencial/semipresencial/virtual)\n   - Inversión (costo por semestre)\n   - Áreas de especialización\n   - Perfil del egresado\n   - Oportunidades de carrera\n   \n2. **GUARDA AUTOMÁTICAMENTE** el nombre del programa en el campo de información {{client.carrera_interes}}\n\n3. Si el usuario menciona un programa diferente después, ACTUALIZA el carrera_interes con el nuevo programa y reconoce el cambio: \"Perfecto, veo que ahora te interesa [NUEVO PROGRAMA]. Te cuento sobre esta carrera...\"\n\n4. Al responder preguntas CONSECUTIVAS sobre el MISMO programa, mantén el contexto y haz referencia a información previa en lugar de repetir todo: \"Como te mencioné, esta carrera tiene una duración de X semestres. Sobre tu nueva pregunta...\"\n\n5. Después de proporcionar detalles del programa, pregunta: \"¡Excelente elección! Para conocer el plan de estudios completo y opciones de becas, lo ideal es una asesoría personal. ¿Quieres agendar una cita?\"\n\nCRÍTICO: \n- Siempre guarda el nombre del programa cuando el usuario muestre interés\n- Actualiza el programa guardado si el usuario cambia de opinión\n- No repitas información básica ya compartida en la misma conversación\n- Usa el historial de conversación para proporcionar respuestas contextuales\n\n[User Recognition and Context Maintenance]\nAl inicio de cada conversación o cuando un usuario recurrente escriba:\n\n1. Verifica estos campos de información:\n   - {{client.first_name}}\n   - {{client.last_name}}\n   - {{client.full_name}}\n   - {{client.carrera_interes}}\n   \n2. Verifica el historial de conversación: {{client.conversation_history}}\n{{client.conversation_summary}}\n\n3. Si el usuario está regresando y previamente mostró interés en un programa:\n   \"¡Hola {{client.first_name}}! Me alegra verte otra vez. La última vez hablamos sobre {{client.carrera_interes}}. ¿Quieres profundizar en algo o prefieres explorar otras opciones?\"\n\n4. Durante la conversación, mantén el contexto:\n   - Recordando lo que ya se ha discutido\n   - No repitiendo información innecesariamente\n   - Haciendo referencia a respuestas previas cuando sea relevante\n   - Construyendo sobre partes anteriores de la conversación\n\nCRÍTICO: Siempre mantén el contexto de la conversación. Evita repetir información que ya se compartió. Usa frases como \"Como te mencioné anteriormente...\" o \"Siguiendo con lo que te decía...\" para mostrar continuidad.\n\n[Data Extraction and Saving]\nDurante la conversación, extrae y guarda la siguiente información cuando se mencione:\n\n- Nombre completo → {{client.full_name}} (cuando el usuario lo proporcione)\n- Programa de interés → {{client.carrera_interes}} (cuando el usuario pregunte sobre o muestre interés en un programa específico)\n\nCRÍTICO: \n- Guarda automáticamente el nombre del programa cada vez que el usuario exprese interés o haga preguntas detalladas sobre un programa específico\n- Actualiza carrera_interes si el usuario cambia a un programa diferente\n- Estos campos se transferirán al Smarton de agendamiento cuando el usuario decida agendar una cita\n\n[Exit Intent Detection - Appointment Scheduling]\nTu tarea PRINCIPAL es identificar cuando el usuario quiere agendar una cita. Este es el punto clave de transición al sistema de agendamiento.\n\nFrases que indican intención de agendar (ejemplos):\n- \"quiero una cita\"\n- \"agendar\"\n- \"agendar una cita\"\n- \"hablar con un asesor\"\n- \"quiero inscribirme\"\n- \"programar reunión\"\n- \"schedule appointment\"\n- \"book a meeting\"\n- \"necesito más información personalizada\"\n\nCuando el usuario exprese CUALQUIERA de estas intenciones:\n\n1. Da una confirmación breve:\n   \"¡Perfecto! Te conecto con nuestro sistema de agendamiento para que elijas el mejor horario. 🗓️\"\n\n2. **ACTIVA INMEDIATAMENTE** la intención de salida llamada \"agendar_cita\" configurada en el Flowbuilder\n\n3. El sistema automáticamente transferirá el flujo y todo el contexto (incluyendo full_name y carrera_interes si están disponibles) al Smarton de agendamiento\n\nCRÍTICO: \n- No pidas confirmación cuando el usuario exprese intención de agendar\n- Confirma inmediatamente y activa la intención de salida\n- Confía en que el Smarton de agendamiento manejará el resto\n- Todos los datos guardados (nombre, programa de interés) se transferirán automáticamente\n\n[Integration with Scheduling System]\nEste Smarton (Asesor Académico) está conectado a un Smarton de agendamiento a través de la intención de salida \"agendar_cita\".\n\nCuando activas esta intención:\n- El flujo de conversación continuará sin problemas\n- Todo el contexto y variables guardadas se transferirán automáticamente\n- El Smarton de agendamiento verificará qué datos ya existen y solo preguntará por la información faltante\n- El usuario experimentará una transición suave sin repeticiones\n\nTu responsabilidad termina después de activar la intención. El Smarton de agendamiento:\n- Confirmará los datos existentes (nombre, programa)\n- Recopilará información adicional requerida (email, fecha, hora)\n- Mostrará un resumen para confirmación\n- Procesará la cita a través del sistema externo\n\n[Examples]\n\n**IMPORTANTE:** Los ejemplos a continuación muestran cómo debes responder al usuario. Las notas que dicen \"(Nota interna: ...)\" son SOLO para tu conocimiento interno - NUNCA las incluyas en tus respuestas al usuario. El guardado de variables es automático y silencioso.\n\n\n**IMPORTANTE:** Los ejemplos a continuación muestran cómo debes responder al usuario. Las notas que dicen \"(Nota interna: ...)\" son SOLO para tu cono",
+              "values": [
+                "carrera_interes",
+                "first_name",
+                "last_name",
+                "full_name",
+                "carrera_interes",
+                "conversation_history",
+                "conversation_summary",
+                "first_name",
+                "carrera_interes",
+                "full_name",
+                "carrera_interes"
+              ]
+            }
+          },
+          "commonCfg": {
+            "stages": [],
+            "retries": 3,
+            "fieldOptions": [
+              {
+                "id": "9d6720c7-d501-436d-990f-3574ee8fec90",
+                "required": true,
+                "optionalField": {
+                  "required": false,
+                  "sameAs": null,
+                  "id": "zX2W84BzxolRaOJSKtvp_sys",
+                  "reservedNames": [
+                    "fullName",
+                    "full_name",
+                    "nombre completo",
+                    "nome completo",
+                    "nom complet",
+                    "nombre_completo",
+                    "nome_completo",
+                    "nom_complet",
+                    "full name"
+                  ],
+                  "active": true,
+                  "length": 255,
+                  "name": "Nombre completo",
+                  "requiredResources": [
+                    "client"
+                  ],
+                  "isProcessed": true,
+                  "type": "Texto",
+                  "category": "variable",
+                  "position": 0,
+                  "keyword": "full_name",
+                  "isSystem": true,
+                  "readOnly": true,
+                  "description": "Nombre completo del cliente. Este campo se utiliza para mostrar el nombre completo en diferentes secciones del sistema."
+                }
+              },
+              {
+                "optionalField": {
+                  "keywordPath": "firstName",
+                  "category": "variable",
+                  "sameAs": null,
+                  "position": 1,
+                  "reservedNames": [
+                    "firstName",
+                    "first_name",
+                    "primer nombre",
+                    "primeiro nome",
+                    "prénom",
+                    "primer_nombre",
+                    "primeiro_nome",
+                    "prénom",
+                    "first name",
+                    "clientName",
+                    "client_name",
+                    "nomClient",
+                    "nom_client",
+                    "nombreCliente",
+                    "nombre_cliente"
+                  ],
+                  "active": true,
+                  "isSystem": true,
+                  "isProcessed": true,
+                  "length": 255,
+                  "id": "a6lJWQJZ3Ein0iEkGQ8F_sys",
+                  "type": "Texto",
+                  "keyword": "first_name",
+                  "required": false,
+                  "readOnly": false,
+                  "description": "Primer nombre del cliente. Utilizado para personalizar las interacciones y comunicaciones.",
+                  "requiredResources": [
+                    "client"
+                  ],
+                  "name": "Nombre"
+                },
+                "id": "97e4c093-aeb8-412f-987d-763bd14f1998",
+                "required": true
+              },
+              {
+                "optionalField": {
+                  "required": false,
+                  "requiredResources": [
+                    "client"
+                  ],
+                  "length": 255,
+                  "active": true,
+                  "category": "variable",
+                  "name": "Apellido",
+                  "readOnly": false,
+                  "isProcessed": true,
+                  "keywordPath": "lastName",
+                  "sameAs": null,
+                  "type": "Texto",
+                  "description": "Apellido del cliente. Complementa el primer nombre para formar el nombre completo.",
+                  "position": 2,
+                  "id": "OBLpn0xwoWk6MztraMcV_sys",
+                  "isSystem": true,
+                  "reservedNames": [
+                    "lastName",
+                    "last_name",
+                    "apellido",
+                    "sobrenome",
+                    "nom de famille",
+                    "nomDeFamille",
+                    "nom_de_famille",
+                    "last name"
+                  ],
+                  "keyword": "last_name"
+                },
+                "id": "14333504-fb15-46b2-845f-6cd30147846b",
+                "required": true
+              },
+              {
+                "id": "7bebf6c3-308f-43f7-b1ee-1df18c08d421",
+                "optionalField": {
+                  "name": "carrera_interes",
+                  "isSystem": false,
+                  "type": "Texto",
+                  "id": "a05EiE9gIcfyeWIZVjPF",
+                  "length": 90,
+                  "updatedAt": {
+                    "_nanoseconds": 415000000,
+                    "_seconds": 1765954597
+                  },
+                  "createdAt": {
+                    "_seconds": 1765954377,
+                    "_nanoseconds": 274000000
+                  },
+                  "keyword": "carrera_interes",
+                  "active": true,
+                  "category": "predefined_field",
+                  "description": "Este campo almacena la selección de carrera de interés del usuario. Ej. Ingeniería en sistemas.",
+                  "typeLength": "Texto (90)",
+                  "required": false
+                },
+                "required": true
+              }
+            ]
+          },
+          "type": "generic",
+          "catalogModeCfg": {
+            "catalogs": []
+          }
+        },
+        "buttons": {
+          "current": []
+        }
+      },
+      "cellId": "F2LqhgzDUIXsl9i16yFX",
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "08a5c46f-0555-4b74-824f-f1e31cc7b578"
+          },
+          {
+            "category": "other",
+            "group": "default",
+            "attrs": {
+              "portRemoveButton": {
+                "display": "none"
+              },
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              },
+              "portLabel": {
+                "text": "Error de contexto",
+                "x": 0,
+                "textAnchor": "middle"
+              }
+            },
+            "id": "d7360455-48a6-491a-8897-4b5004807e7a",
+            "args": {
+              "x": 175,
+              "y": 180
+            }
+          },
+          {
+            "group": "out",
+            "id": "a7bcf49b-f820-4d31-9561-69a456ac2eee",
+            "attrs": {
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              },
+              "portLabel": {
+                "text": "Intención: agendar_cita"
+              },
+              "data": {
+                "intentValue": "agendar_cita",
+                "intentPrompt": "Detecta cuando el usuario expresa el deseo de agendar una cita, reunión o asesoría personalizada con el equipo de admisiones de la universidad.\n\nActiva esta intención cuando el usuario:\n- Solicite explícitamente agendar, programar o reservar una cita\n- Exprese necesidad de hablar con un asesor o recibir atención personalizada\n- Indique que quiere más información detallada que requiera una reunión\n- Diga que desea inscribirse o iniciar el proceso de admisión\n\nEjemplos de frases del usuario que activan esta intención:\n- \"Quiero agendar una cita\"\n- \"¿Puedo hablar con un asesor?\"\n- \"Me gustaría programar una reunión\"\n- \"Necesito más información personalizada\"\n- \"Quiero inscribirme\"\n- \"¿Cómo agendo una cita?\"\n- \"Quisiera una asesoría\"\n- \"Me interesa agendar\"\n\nNO actives esta intención si el usuario solo está preguntando información general sobre las carreras o requisitos sin expresar deseo de agendar."
+              }
+            },
+            "category": "message_body",
+            "args": {
+              "x": -95,
+              "y": 180
+            }
+          }
+        ]
+      },
+      "size": {
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "cellId": "GEHI9BY0G1NseoRitCH9",
+      "type": "app.Link",
+      "target": {
+        "port": "a858244d-0aef-4562-ae49-496573816814",
+        "id": "0e06ee78-5fe7-4f8f-9524-99648dcd6d55",
+        "magnet": "portBody"
+      },
+      "z": -1,
+      "source": {
+        "port": "044482f9-f6bf-4eea-bbb3-4160cba18434",
+        "id": "fbb82a36-7423-43fd-ba12-c5cd7531ab90",
+        "magnet": "portButton"
+      },
+      "version": "1",
+      "id": "90fd355b-cdae-4342-87cc-0c5a0480cc57",
+      "attrs": {}
+    },
+    {
+      "size": {
+        "width": 72,
+        "height": 72
+      },
+      "cellId": "KCDp8zIC9Nkub7Pb4xC3",
+      "wasOpened": false,
+      "id": "23e9d373-1684-4355-b0fe-896dd71dfb8f",
+      "type": "app.Conditional",
+      "z": 29,
+      "version": "1",
+      "ports": {
+        "items": [
+          {
+            "id": "df18ba5e-89cf-42d7-bc03-d0677357091e",
+            "group": "in"
+          },
+          {
+            "group": "default",
+            "attrs": {
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              },
+              "portLabel": {
+                "text": "Otro"
+              }
+            },
+            "category": "other",
+            "args": {
+              "x": 175,
+              "y": 180
+            },
+            "id": "56c17c0b-5632-49b7-aa3b-ee29231fa71a"
+          },
+          {
+            "group": "out",
+            "id": "91177b29-bb70-442c-b398-5ff188d4830f",
+            "attrs": {
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              },
+              "selectedOption": {
+                "value": "",
+                "httpComponent": "",
+                "conditions": [
+                  {
+                    "value": {
+                      "values": [],
+                      "body": ""
+                    },
+                    "valueType": {
+                      "isFlowField": true,
+                      "category": "flow_field",
+                      "keyword": "link_evento",
+                      "name": "link_evento",
+                      "type": "dynamic",
+                      "id": "0619150a-6069-4fd8-a878-f9b45ace58c5",
+                      "displayModules": [],
+                      "originComponent": "http"
+                    },
+                    "operator": {
+                      "atomMagic": false,
+                      "originalText": "está vacío o no se ha establecido",
+                      "regex": false,
+                      "text": "está vacío o no se ha establecido",
+                      "category": "empty",
+                      "expression": "empty",
+                      "type": null
+                    },
+                    "condition": null
+                  }
+                ],
+                "currentSchedule": "",
+                "selectedResult": "informationField",
+                "valueType": "",
+                "defaultValueTracked": true,
+                "text": "es igual que",
+                "title": "link_evento",
+                "category": "equal_to"
+              },
+              "portLabel": {
+                "text": "está vacío o no se ha establecido link_evento"
+              },
+              "portRemoveButton": {
+                "display": "unset"
+              }
+            },
+            "args": {
+              "x": -95,
+              "y": 180
+            }
+          }
+        ]
+      },
+      "attrs": {
+        "label": {
+          "text": "Condicional #1"
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "data": {
+          "isChecked": ""
+        }
+      },
+      "position": {
+        "x": -6024,
+        "y": 400
+      }
+    },
+    {
+      "cellId": "KufJBKsjfKWWPtvC27uI",
+      "source": {
+        "magnet": "portButton",
+        "port": "b18e0188-8844-43e1-b441-10638f9347bd",
+        "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84"
+      },
+      "attrs": {},
+      "id": "d0f65476-8ab1-48df-ae45-36cc0b0e63a3",
+      "z": -1,
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          }
+        }
+      ],
+      "version": "1",
+      "type": "app.Link",
+      "target": {
+        "magnet": "portBody",
+        "id": "6fe8b6ea-11cd-460e-8704-ccc4db055de7",
+        "port": "024109b4-3e82-4638-8f7a-4db50187c541"
+      }
+    },
+    {
+      "id": "fbb82a36-7423-43fd-ba12-c5cd7531ab90",
+      "ports": {
+        "items": [
+          {
+            "id": "5ac817ec-b636-42b8-8817-e0f5ef0dea8b",
+            "group": "in"
+          },
+          {
+            "args": {
+              "y": 180,
+              "x": 175
+            },
+            "group": "default",
+            "attrs": {
+              "portRemoveButton": {
+                "display": "none"
+              },
+              "portLabel": {
+                "x": 0,
+                "text": "Error de contexto",
+                "textAnchor": "middle"
+              },
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              }
+            },
+            "category": "other",
+            "id": "044482f9-f6bf-4eea-bbb3-4160cba18434"
+          },
+          {
+            "id": "b07c6ee2-a0d4-48c1-a9c7-db2855c70df1",
+            "args": {
+              "x": -95,
+              "y": 180
+            },
+            "attrs": {
+              "data": {
+                "intentValue": "terminar_chat",
+                "intentPrompt": "Detecta cuando el usuario quiere terminar la conversación.\n\nACTIVAR \"terminar_chat\" cuando el usuario dice: \"adiós\", \"chao\", \"bye\", \"hasta luego\", \"nos vemos\", \"me tengo que ir\", \"terminar\", \"cerrar\", \"acabar\", \"fin\", \"eso es todo\", \"nada más\", \"ya está\", o cuando Sofia pregunta si quiere terminar y responde \"sí\", \"terminemos\", \"cerremos\".\n\nTambién: \"gracias, adiós\", \"perfecto, chao\", \"ok, hasta luego\".\n\nNO ACTIVAR si solo dice \"gracias\", \"ok\" o \"perfecto\" sin despedida, o si continúa preguntando.\n\nNivel de certeza: ALTO - Solo activar cuando sea claro que quiere terminar."
+              },
+              "portLabel": {
+                "text": "Intención: terminar_chat"
+              },
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              }
+            },
+            "category": "message_body",
+            "group": "out"
+          }
+        ]
+      },
+      "wasOpened": false,
+      "type": "app.Smarton",
+      "size": {
+        "height": 72,
+        "width": 72
+      },
+      "position": {
+        "y": 824,
+        "x": -6008
+      },
+      "version": "1",
+      "attrs": {
+        "buttons": {
+          "current": []
+        },
+        "label": {
+          "text": "Smarton #3"
+        },
+        "alternativeLabel": {
+          "text": "Post-Agenda"
+        },
+        "data": {
+          "catalogModeCfg": {
+            "catalogs": []
+          },
+          "genericModeCfg": {
+            "promptValue": {
+              "values": [
+                "full_name",
+                "email",
+                "carrera_interes",
+                "fecha_cita",
+                "hora_inicio",
+                "link_evento",
+                "conversation_summary",
+                "conversation_history",
+                "first_name",
+                "fecha_cita",
+                "hora_inicio",
+                "carrera_interes",
+                "email_estudiante",
+                "carrera_interes",
+                "fecha_cita",
+                "fecha_cita",
+                "fecha_cita",
+                "first_name",
+                "fecha_cita",
+                "hora_inicio",
+                "email_estudiante",
+                "carrera_interes",
+                "fecha_cita",
+                "carrera_interes"
+              ],
+              "body": "[Personality and goal]\n¡Felicidades! El usuario acaba de agendar su cita exitosamente. Ahora eres Sofia en modo \"post-venta\". Tu objetivo es:\n1. Confirmar que la cita fue creada exitosamente\n2. Proporcionar información adicional útil sobre su carrera de interés\n3. Responder cualquier duda final que tengan\n4. Cerrar la conversación de forma profesional y cálida cuando estén listos\n\n[Context Available]\nTienes acceso a TODA la información de la cita que acaban de agendar:\n- {{client.full_name}} - Nombre completo del estudiante\n- {{client.email}} - Email donde se envió confirmación\n- {{client.carrera_interes}} - Carrera que les interesa\n- {{client.fecha_cita}} - Fecha de la cita (YYYY-MM-DD)\n- {{client.hora_inicio}} - Hora de inicio (HH:mm)\n- {{flow_field.link_evento}} - Link del evento en Google Calendar\n\nVerifica el historial de conversación: \n{{client.conversation_summary}} - Resumen de la conversación, \n{{client.conversation_history}} - Historial de la gestión. \n\nTambién tienes acceso al documento base con información de todas las carreras y de la Universidad.\n\n[Format]\nTono celebratorio al inicio, luego informativo y cálido. Máximo 300 palabras. Usa emojis relevantes (✅, 🎓, 📚, 📧, 📅, 🎉). Puedes usar listas si es necesario.\n\n[Opening Message - CRÍTICO]\nTu PRIMER mensaje SIEMPRE debe ser:\n\n\"¡Excelente, {{client.first_name}}! 🎉\n\nTu cita ha sido agendada exitosamente:\n\n📅 Fecha: {{client.fecha_cita}}\n🕐 Hora: {{client.hora_inicio}}\n🎓 Tema: {{client.carrera_interes}}\n📧 Confirmación enviada a: {{client.email_estudiante}}\n\n¿Te gustaría saber algo más sobre {{client.carrera_interes}} antes de la reunión, o tienes alguna otra consulta? 😊\"\n\n[Available Actions]\nDespués del mensaje inicial, puedes ayudar con:\n\n1. **Información adicional sobre su carrera:**\n   - Perfil del egresado\n   - Campo laboral\n   - Requisitos específicos de admisión\n   - Convenios o alianzas de la universidad\n   - Testimonios o casos de éxito (si están en el documento)\n\n2. **Información sobre otras carreras:**\n   - Si preguntan por otros programas\n   - Comparaciones entre carreras\n   - Dobles titulaciones (si existen)\n\n3. **Información práctica:**\n   - Qué documentos llevar a la cita\n   - Qué preguntas pueden preparar\n   - Información sobre becas o financiamiento\n   - Proceso de admisión en general\n\n4. **Confirmación de datos:**\n   - Si quieren verificar algún dato de su cita\n   - Si necesitan el link del evento de nuevo\n\n[Restriction]\n- NUNCA sugieras agendar otra cita (ya tienen una)\n- Si preguntan por cambiar la cita, di: \"Para modificar tu cita del {{client.fecha_cita}}, por favor contacta a admisiones@universidad.edu o llama al (XXX) XXX-XXXX\"\n- Usa SOLO información del documento base\n- No inventes datos sobre la carrera o la universidad\n- Si algo no está en el documento, sé honesto: \"Esa información específica la podrás conocer en tu cita del {{client.fecha_cita}} 😊\"\n\n[Using Context Effectively]\nPersonaliza tus respuestas basándote en su carrera de interés:\n\nEjemplo si carrera_interes = \"Ingeniería de Sistemas\":\n\"Como te interesa Ingeniería de Sistemas, te comento que esta carrera tiene alta demanda laboral en áreas como desarrollo de software, ciberseguridad e inteligencia artificial. ¿Te gustaría saber sobre alguna especialización en particular?\"\n\nEjemplo si carrera_interes = \"Medicina\":\n\"Medicina es una carrera que requiere mucha dedicación, pero es muy gratificante. En tu cita del {{client.fecha_cita}} podrás conocer sobre los laboratorios de prácticas y convenios hospitalarios. ¿Tienes alguna pregunta específica que quieras abordar?\"\n\n[Exit Intent - terminar_chat]\n**Identifica cuando el usuario está listo para terminar:**\n\nFrases que indican cierre:\n- \"No, eso es todo\"\n- \"No tengo más preguntas\"\n- \"Está bien, gracias\"\n- \"Nos vemos en la cita\"\n- \"Adiós\"\n- \"Chao\"\n- \"Hasta luego\"\n- \"Perfecto, gracias\"\n\n**Cuando detectes intención de cerrar:**\n1. Pregunta para confirmar: \"¿Algo más en lo que pueda ayudarte antes de despedirnos? 😊\"\n2. Si confirma que quiere terminar, responde:\n\n\"¡Perfecto, {{client.first_name}}! 🎓\n\nNos vemos el {{client.fecha_cita}} a las {{client.hora_inicio}}. No olvides revisar tu correo {{client.email_estudiante}} para la confirmación.\n\nSi surge alguna duda antes de la cita, ¡aquí estaré! \n\n¡Hasta pronto! 👋✨\"\n\n3. **ACTIVA la intención: terminar_chat**\n\n[Examples]\n\n**Ejemplo 1 - Mensaje Inicial:**\nBot: ¡Excelente, Jonnathan! 🎉\n\nTu cita ha sido agendada exitosamente:\n\n📅 Fecha: 2025-12-23\n🕐 Hora: 10:00\n🎓 Tema: Ingeniería de Sistemas y Ciberseguridad\n📧 Confirmación enviada a: yosue.jpg@gmail.com\n\nPuedes ver y añadir la cita a tu calendario aquí: [link]\n\n¿Te gustaría saber algo más sobre Ingeniería de Sistemas antes de la reunión, o tienes alguna otra consulta? 😊\n\n**Ejemplo 2 - Usuario Pregunta Sobre su Carrera:**\nUsuario: Cuéntame más sobre Ingeniería\nBot: ¡Claro! 🎓 Como te interesa Ingeniería de Sistemas y Ciberseguridad, te comento:\n\nEsta carrera está enfocada en formar profesionales capaces de diseñar sistemas seguros y proteger infraestructuras digitales. Las áreas de especialización incluyen:\n- Desarrollo de software\n- Ciberseguridad y ethical hacking\n- Inteligencia artificial y machine learning\n- Arquitectura de sistemas\n\nEl campo laboral es muy amplio, con alta demanda en empresas de tecnología, bancos, gobierno y consultoras.\n\nEn tu cita del 2025-12-23 podrás conocer el plan de estudios completo y los laboratorios especializados. ¿Hay algo específico que te gustaría preguntar en esa reunión? 😊\n\n**Ejemplo 3 - Usuario Pregunta Sobre Otra Carrera:**\nUsuario: ¿Y qué tal Medicina?\nBot: Medicina es una excelente opción también. 🩺 Los requisitos son:\n- Bachillerato en Ciencias\n- Promedio mínimo 9.0/10.0\n- Examen de aptitud científica\n\nSi te interesa conocer más sobre Medicina además de Ingeniería, podemos mencionarlo en tu cita del 2025-12-23. ¿Te gustaría que lo anotemos? 😊\n\n**Ejemplo 4 - Usuario Quiere Cerrar:**\nUsuario: No, eso es todo, gracias\nBot: ¿Algo más en lo que pueda ayudarte antes de despedirnos? 😊\nUsuario: No, ya está bien\nBot: ¡Perfecto, Jonnathan! 🎓\n\nNos vemos el 2025-12-23 a las 10:00. No olvides revisar tu correo yosue.jpg@gmail.com para la confirmación.\n\nSi surge alguna duda antes de la cita, ¡aquí estaré! \n\n¡Hasta pronto! 👋✨\n\n[ACTIVA: terminar_chat]\n\n**Ejemplo 5 - Usuario Solo Dice \"Gracias\":**\nUsuario: Gracias\nBot: ¡Con gusto, Jonnathan! 😊 ¿Hay algo más sobre {{client.carrera_interes}} o sobre tu cita del {{client.fecha_cita}} que quieras saber?\n\n**Ejemplo 6 - Usuario Quiere Cambiar la Cita:**\nUsuario: ¿Puedo cambiar la hora?\nBot: Para modificar tu cita del 2025-12-23, por favor contacta a:\n📧 admisiones@universidad.edu\n📞 (XXX) XXX-XXXX\n\nEllos te ayudarán a reagendar. ¿Algo más en lo que pueda ayudarte? 😊\n\n**Ejemplo 7 - Usuario Pregunta Qué Llevar:**\nUsuario: ¿Qué documentos llevo a la cita?\nBot: Para tu cita del 2025-12-23 te recomiendo llevar:\n\n📋 Documentos útiles:\n- Cédula o identificación\n- Certificado de bachillerato (si lo tienes)\n- Notas o calificaciones recientes\n- Lista de preguntas que tengas sobre {{client.carrera_interes}}\n\nNo es obligatorio, pero te ayudará a aprovechar mejor la reunión. ¿Algo más? 😊\n\n[Quality Checklist]\nAntes de responder verifica:\n✅ Usaste datos reales de la cita (fecha, hora, carrera, email)\n✅ Personalizaste según su carrera de interés\n✅ Info solo del documento base\n✅ NO sugeriste agendar otra cita\n✅ Máximo 300 palabras\n✅ Tono celebratorio y servicial\n✅ Detectaste correctamente si quieren cerrar\n\n[Success Factors]\n1. **Celebración:** Reconoce el logro de haber agendado\n2. **Información:** Proporciona valor adicional sobre su carrera\n3. **Contexto:** Usa TODOS los datos disponibles de la cita\n4. **Servicio:** Responde cualquier duda final\n5. **Cierre:** Termina de forma cálida y profesional\n\nEres el cierre perfecto de una experiencia exitosa. ¡Hazlos sentir emocionados por su cita! 🎓✨"
+            },
+            "documents": [
+              {
+                "mediaType": "application/pdf",
+                "path": "/companies/Fv2ZycFcUGtW6mywlsNC/flow_multimedia/1766156081623_Universidad_del_futuro_doc_base.pdf",
+                "fileName": "Universidad_del_futuro_doc_base.pdf",
+                "description": "Base de conocimiento y fuente de la verdad del agente",
+                "mediaUrl": "https://firebasestorage.googleapis.com/v0/b/atomchat-io.appspot.com/o/companies%2FFv2ZycFcUGtW6mywlsNC%2Fflow_multimedia%2F1766156081623_Universidad_del_futuro_doc_base.pdf?alt=media&token=c3f0c359-0dbd-4e6b-b21d-7ab6b581d838",
+                "documentId": "c20968f0-60a7-4ddb-9999-c5e297161d4c",
+                "type": "file"
+              }
+            ],
+            "useCase": {
+              "keyword": "generic",
+              "id": "1kSUv7PG0BAqBQBLMZXN"
+            },
+            "description": "El agente es un asistente conversacional enfocado en la post-agenda de citas académicas. Se especializa en brindar información sobre carreras universitarias. Su comunicación es cálida y profesional, con un tono celebratorio. Puede confirmar citas, ofrecer detalles sobre carreras y responder dudas. Está diseñado para estudiantes interesados en educación superior.",
+            "modelAI": {
+              "provider": "OpenAI",
+              "name": "GPT 4o",
+              "id": "gpt40_2"
+            }
+          },
+          "commonCfg": {
+            "retries": 3,
+            "stages": [],
+            "fieldOptions": []
+          },
+          "type": "generic"
+        }
+      },
+      "cellId": "U0170kBWtG0aJ5fawCc0",
+      "z": 27
+    },
+    {
+      "id": "8831f63e-edc1-4950-9b4e-b145183161f9",
+      "source": {
+        "id": "23e9d373-1684-4355-b0fe-896dd71dfb8f",
+        "magnet": "portButton",
+        "port": "56c17c0b-5632-49b7-aa3b-ee29231fa71a"
+      },
+      "cellId": "USzl2OiaJbxKOgN6qcvP",
+      "type": "app.Link",
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          }
+        }
+      ],
+      "attrs": {},
+      "z": -1,
+      "target": {
+        "port": "2e5b6031-911b-452a-b519-cfa83bc8e8ea",
+        "id": "4aa65f27-d70b-4c82-bddf-169e5a9a0bac",
+        "magnet": "portBody"
+      },
+      "version": "1"
+    },
+    {
+      "attrs": {},
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "buttonChecked": false,
+                "repetitions": 0
+              }
+            }
+          }
+        }
+      ],
+      "version": "1",
+      "id": "566098ee-faf7-40d8-9266-56c1614c8132",
+      "type": "app.Link",
+      "source": {
+        "id": "49c7a843-7339-430b-858c-f5edbff55b4b",
+        "port": "e52e40c0-03f7-4e93-931d-d6a5f2b984eb",
+        "magnet": "portButton"
+      },
+      "target": {
+        "id": "23e9d373-1684-4355-b0fe-896dd71dfb8f",
+        "port": "df18ba5e-89cf-42d7-bc03-d0677357091e",
+        "magnet": "portBody"
+      },
+      "cellId": "WxO5KHcsykvljk3ekfi9",
+      "z": -1
+    },
+    {
+      "id": "94653c7a-f122-4cda-bc3a-ec12eabb3f5d",
+      "target": {
+        "magnet": "portBody",
+        "id": "e09a0593-35ea-45c2-9041-440007dabdbf",
+        "port": "9abb4f8f-4bfc-4e5e-a349-b1be2bafbced"
+      },
+      "source": {
+        "port": "6c5a62c7-10da-4316-93dc-275a37f88f25",
+        "magnet": "portButton",
+        "id": "49c7a843-7339-430b-858c-f5edbff55b4b"
+      },
+      "type": "app.Link",
+      "z": -1,
+      "cellId": "aDJbSupL7SYqE4lZTusK",
+      "version": "1",
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          }
+        }
+      ],
+      "attrs": {}
+    },
+    {
+      "cellId": "b0k3LEjARvIRIp0mIcl1",
+      "id": "f5c65be9-1f96-4cab-a61e-5a710cb69539",
+      "type": "app.Link",
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "source": {
+        "magnet": "portButton",
+        "id": "e09a0593-35ea-45c2-9041-440007dabdbf",
+        "port": "bfa49a39-3603-4be9-a80a-7cb21d5ba537"
+      },
+      "z": -1,
+      "version": "1",
+      "target": {
+        "magnet": "portBody",
+        "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84",
+        "port": "cfa7b281-da91-4ffa-8903-ed011c9b734e"
+      },
+      "attrs": {}
+    },
+    {
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "type": "app.Link",
+      "cellId": "eXjWHnyQHU5ygU7orAab",
+      "source": {
+        "port": "ca4d394c-8acf-49a7-bfeb-0dc2bb89aed7",
+        "id": "b0f4509d-bd3e-4350-8b87-1655c246b92c",
+        "magnet": "portButton"
+      },
+      "id": "5c522d0b-5d5e-4149-9872-f1436fbd46a2",
+      "target": {
+        "port": "5ac817ec-b636-42b8-8817-e0f5ef0dea8b",
+        "magnet": "portBody",
+        "id": "fbb82a36-7423-43fd-ba12-c5cd7531ab90"
+      },
+      "z": -1,
+      "version": "1",
+      "attrs": {}
+    },
+    {
+      "z": 19,
+      "cellId": "ilyUWk4avysRE1M469PZ",
+      "wasOpened": false,
+      "type": "app.SaveField",
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "7f6cabf9-7bd6-4a1f-8855-b6c838640015"
+          },
+          {
+            "id": "ba43d4b9-00f6-4b7f-8477-c823c810e7e5",
+            "category": "other",
+            "group": "default"
+          }
+        ]
+      },
+      "version": "1",
+      "position": {
+        "y": 344,
+        "x": -5224
+      },
+      "id": "83baa2be-cc94-4aa9-821e-e601bcbd67bd",
+      "attrs": {
+        "alternativeLabel": {
+          "text": ""
+        },
+        "data": {
+          "currentVariableName": {
+            "keyword": "etapa_falla",
+            "name": "etapa_falla",
+            "category": "flow_field",
+            "type": "dynamic",
+            "isFlowField": true,
+            "originComponent": "save_field",
+            "displayModules": [],
+            "id": "c895138c-e686-4818-b19a-c816b99adb45"
+          },
+          "setField": true,
+          "value": "Smarton1_Asesor_Academico",
+          "fieldType": "dynamic"
+        },
+        "label": {
+          "text": "Guardar campo #1"
+        }
+      },
+      "size": {
+        "width": 72,
+        "height": 72
+      }
+    },
+    {
+      "wasOpened": false,
+      "size": {
+        "width": 400,
+        "height": 219.81483459472656
+      },
+      "type": "app.Message",
+      "position": {
+        "x": -6816,
+        "y": 408
+      },
+      "ports": {
+        "items": [
+          {
+            "id": "f46bef2b-17d0-467d-b11c-3c775e09756f",
+            "group": "in"
+          },
+          {
+            "attrs": {
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              }
+            },
+            "args": {
+              "x": 190,
+              "y": 219.81483459472656
+            },
+            "id": "ca4d394c-8acf-49a7-bfeb-0dc2bb89aed7",
+            "group": "out"
+          }
+        ]
+      },
+      "attrs": {
+        "label": {
+          "text": "Mensaje #3"
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "description": {
+          "replacedText": "Listo, {{client.first_name}} uno de nuestros asesores se ponda en contacto al correo {{client.email}}, para confirmar la programación de la reunión para el {{client.fecha_cita}} a las {{client.hora_inicio}}, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en {{client.carrera_interes}}.",
+          "text": "Listo, first_name uno de nuestros asesores se ponda en contacto al correo email, para confirmar la programación de la reunión para el fecha_cita a las hora_inicio, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en carrera_interes.",
+          "values": [
+            "first_name",
+            "email",
+            "fecha_cita",
+            "hora_inicio",
+            "carrera_interes"
+          ]
+        },
+        "data": {
+          "info": {
+            "text": "Listo, {{client.first_name}} uno de nuestros asesores se ponda en contacto al correo {{client.email}}, para confirmar la programación de la reunión para el {{client.fecha_cita}} a las {{client.hora_inicio}}, para revisar juntos todo lo relacionado con tu solicitud para el programa de grado en {{client.carrera_interes}}.",
+            "buttonsCheck": false,
+            "imgCheck": false,
+            "platform": "whatsapp"
+          }
+        },
+        "selectedOption": {
+          "selected": {
+            "keyword": "interactive_text"
+          }
+        }
+      },
+      "messageChanged": false,
+      "z": 28,
+      "cellId": "jjLDrMTnRl50ccpTGIE0",
+      "id": "b0f4509d-bd3e-4350-8b87-1655c246b92c",
+      "version": "1"
+    },
+    {
+      "position": {
+        "x": -6144,
+        "y": 1344
+      },
+      "cellId": "k8TF8shCsxafEXHoPQgG",
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "414be8ae-71da-4ae4-9272-f26c61bec457"
+          }
+        ]
+      },
+      "attrs": {
+        "label": {
+          "text": "Fin de flujo #1"
+        }
+      },
+      "wasOpened": false,
+      "type": "app.FlowchartEnd",
+      "id": "32d1a98b-8651-4824-85c8-eee506fd8f98",
+      "size": {
+        "height": 48,
+        "width": 48
+      },
+      "z": 24,
+      "version": "1"
+    },
+    {
+      "version": "1",
+      "attrs": {
+        "alternativeLabel": {
+          "text": ""
+        },
+        "label": {
+          "text": "Guardar campo #4"
+        },
+        "data": {
+          "value": "Smarton_3: Post-Agenda",
+          "setField": true,
+          "currentVariableName": {
+            "keyword": "etapa_falla",
+            "category": "flow_field",
+            "isFlowField": true,
+            "id": "c895138c-e686-4818-b19a-c816b99adb45",
+            "displayModules": [],
+            "name": "etapa_falla",
+            "originComponent": "save_field",
+            "type": "dynamic"
+          },
+          "fieldType": "predefinedField"
+        }
+      },
+      "position": {
+        "y": 1088,
+        "x": -5880
+      },
+      "wasOpened": false,
+      "id": "0e06ee78-5fe7-4f8f-9524-99648dcd6d55",
+      "ports": {
+        "items": [
+          {
+            "id": "a858244d-0aef-4562-ae49-496573816814",
+            "group": "in"
+          },
+          {
+            "id": "45d6aa53-0f39-4d30-8aa1-8a95322383f8",
+            "group": "default",
+            "category": "other"
+          }
+        ]
+      },
+      "size": {
+        "height": 72,
+        "width": 72
+      },
+      "type": "app.SaveField",
+      "z": 19,
+      "cellId": "ka0PHkG1tL36IPJGdUeG"
+    },
+    {
+      "z": -1,
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "jump": {
+              "data": {
+                "buttonChecked": false,
+                "repetitions": 0
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          }
+        }
+      ],
+      "cellId": "kfRo5NXreaTyDqNm1qKA",
+      "source": {
+        "port": "b07c6ee2-a0d4-48c1-a9c7-db2855c70df1",
+        "magnet": "portButton",
+        "id": "fbb82a36-7423-43fd-ba12-c5cd7531ab90"
+      },
+      "target": {
+        "port": "aa75e722-d1d8-4148-9e0b-c1fc79f5e069",
+        "magnet": "portBody",
+        "id": "0317b068-0d5d-4ebc-a86c-f0285f6518a2"
+      },
+      "type": "app.Link",
+      "version": "1",
+      "id": "522bb8f7-60be-4a25-ab03-13fc80a4b53c",
+      "attrs": {}
+    },
+    {
+      "target": {
+        "magnet": "portBody",
+        "id": "49c7a843-7339-430b-858c-f5edbff55b4b",
+        "port": "6aacfbcd-6a90-45da-8e09-a05a28f575e4"
+      },
+      "version": "1",
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          }
+        }
+      ],
+      "type": "app.Link",
+      "id": "88c7ebe7-7800-484f-9d42-a576a5b893e5",
+      "source": {
+        "magnet": "portButton",
+        "port": "405c6243-cbf5-4b6c-9add-b90dcf93df91",
+        "id": "4601a005-1f71-4918-bb90-ba8018446b51"
+      },
+      "z": -1,
+      "cellId": "l0IhBvPp9cNaUHwBp86I",
+      "attrs": {}
+    },
+    {
+      "version": "1",
+      "type": "app.Link",
+      "source": {
+        "port": "45d6aa53-0f39-4d30-8aa1-8a95322383f8",
+        "id": "0e06ee78-5fe7-4f8f-9524-99648dcd6d55",
+        "magnet": "portButton"
+      },
+      "cellId": "mRFD2nDRVh2ZmCAQTbyL",
+      "target": {
+        "port": "cfa7b281-da91-4ffa-8903-ed011c9b734e",
+        "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84",
+        "magnet": "portBody"
+      },
+      "z": -1,
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "id": "2eba9ee0-7d8a-4702-8913-164eb481aa14",
+      "attrs": {}
+    },
+    {
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "aa75e722-d1d8-4148-9e0b-c1fc79f5e069"
+          },
+          {
+            "id": "f9395809-3b97-4467-b9cd-6f7c512aa44a",
+            "attrs": {
+              "portBody": {
+                "strokeWidth": 1,
+                "stroke": "rgba(209, 215, 245, 0.6)"
+              }
+            },
+            "group": "out",
+            "args": {
+              "y": 199.81483459472656,
+              "x": 190
+            }
+          }
+        ]
+      },
+      "z": 25,
+      "position": {
+        "x": -6312,
+        "y": 1096
+      },
+      "messageChanged": false,
+      "type": "app.Message",
+      "size": {
+        "width": 400,
+        "height": 199.81483459472656
+      },
+      "cellId": "nyVLUAnCrq7ErEALSfrL",
+      "version": "1",
+      "attrs": {
+        "data": {
+          "info": {
+            "buttonsCheck": false,
+            "text": "Gracias por tu tiempo {{client.first_name}}. Si tienes alguna otra consulta, no dudes en escribirnos.\nRecuerda que en la Universidad del Futuro estamos para acompañarte en cada paso de tu camino académico.",
+            "platform": "whatsapp",
+            "imgCheck": false
+          }
+        },
+        "label": {
+          "text": "Mensaje #1"
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "selectedOption": {
+          "selected": {
+            "keyword": "interactive_text"
+          }
+        },
+        "description": {
+          "replacedText": "Gracias por tu tiempo {{client.first_name}}. Si tienes alguna otra consulta, no dudes en escribirnos.\nRecuerda que en la Universidad del Futuro estamos para acompañarte en cada paso de tu camino académico.",
+          "values": [
+            "first_name"
+          ],
+          "text": "Gracias por tu tiempo first_name. Si tienes alguna otra consulta, no dudes en escribirnos.\nRecuerda que en la Universidad del Futuro estamos para acompañarte en cada paso de tu camino académico."
+        }
+      },
+      "id": "0317b068-0d5d-4ebc-a86c-f0285f6518a2",
+      "wasOpened": false
+    },
+    {
+      "z": -1,
+      "source": {
+        "port": "88102ee4-2dde-4ab1-a083-f46ea2de8285",
+        "id": "4601a005-1f71-4918-bb90-ba8018446b51",
+        "magnet": "portButton"
+      },
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "jump": {
+              "data": {
+                "buttonChecked": false,
+                "repetitions": 0
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          }
+        }
+      ],
+      "attrs": {},
+      "type": "app.Link",
+      "id": "4af9348a-84a4-48bc-8600-63cb27d15d2e",
+      "version": "1",
+      "cellId": "oH7RqinfeMtEYg8UURgv",
+      "target": {
+        "magnet": "portBody",
+        "port": "9d837107-3626-42c9-9160-2f0ce011806d",
+        "id": "22916696-17b1-4c16-ad6c-816d91549fbc"
+      }
+    },
+    {
+      "z": -1,
+      "source": {
+        "port": "f9395809-3b97-4467-b9cd-6f7c512aa44a",
+        "id": "0317b068-0d5d-4ebc-a86c-f0285f6518a2",
+        "magnet": "portButton"
+      },
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          }
+        }
+      ],
+      "cellId": "oQlFLXTbMQT8XyOhOwI6",
+      "attrs": {},
+      "version": "1",
+      "id": "e03b0d39-a0fb-412e-8019-57d4197dc269",
+      "type": "app.Link",
+      "target": {
+        "id": "32d1a98b-8651-4824-85c8-eee506fd8f98",
+        "port": "414be8ae-71da-4ae4-9272-f26c61bec457",
+        "magnet": "portBody"
+      }
+    },
+    {
+      "source": {
+        "magnet": "portButton",
+        "id": "23e9d373-1684-4355-b0fe-896dd71dfb8f",
+        "port": "91177b29-bb70-442c-b398-5ff188d4830f"
+      },
+      "id": "98b08c30-0031-440a-a6e4-b8d4cf98adf2",
+      "type": "app.Link",
+      "attrs": {},
+      "labels": [
+        {
+          "attrs": {
+            "jump": {
+              "data": {
+                "buttonChecked": false,
+                "repetitions": 0
+              }
+            },
+            "labelText": {
+              "text": ""
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "target": {
+        "id": "b0f4509d-bd3e-4350-8b87-1655c246b92c",
+        "port": "f46bef2b-17d0-467d-b11c-3c775e09756f",
+        "magnet": "portBody"
+      },
+      "z": -1,
+      "cellId": "psvwicB8nhH0vKCXNqyR",
+      "version": "1"
+    },
+    {
+      "attrs": {},
+      "labels": [
+        {
+          "position": {
+            "distance": 0.25
+          },
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          }
+        }
+      ],
+      "id": "2408902b-e8de-484a-9eb5-8fe65d80b005",
+      "version": "1",
+      "type": "app.Link",
+      "source": {
+        "id": "212553c0-622b-402f-bf39-81bbd490be05",
+        "magnet": "portButton",
+        "port": "c0b83792-674a-4eeb-bfad-89bbd6920116"
+      },
+      "target": {
+        "port": "08a5c46f-0555-4b74-824f-f1e31cc7b578",
+        "id": "81d56844-b015-4c67-bffa-3f7c9b4a9801",
+        "magnet": "portBody"
+      },
+      "cellId": "qp9XH8KPkVRY09Vqh1MQ",
+      "z": -1
+    },
+    {
+      "position": {
+        "x": -5408,
+        "y": -528
+      },
+      "z": 6,
+      "id": "212553c0-622b-402f-bf39-81bbd490be05",
+      "init": true,
+      "attrs": {
+        "label": {
+          "text": "Bot #1"
+        },
+        "alternativeLabel": {
+          "text": ""
+        },
+        "data": {
+          "passContextToFirstEvaluator": true,
+          "platform": "whatsapp"
+        }
+      },
+      "wasOpened": false,
+      "cellId": "s83vvvtWjgnl0DDYT4i1",
+      "type": "app.Bot",
+      "version": "1",
+      "ports": {
+        "items": [
+          {
+            "group": "neutral",
+            "id": "ff7717d1-19e3-4c5a-b1fc-b2e9ac7de513"
+          },
+          {
+            "id": "c0b83792-674a-4eeb-bfad-89bbd6920116",
+            "group": "out",
+            "attrs": {
+              "portBody": {
+                "stroke": "rgba(209, 215, 245, 0.6)",
+                "strokeWidth": 1
+              }
+            }
+          }
+        ]
+      },
+      "size": {
+        "height": 72,
+        "width": 72
+      }
+    },
+    {
+      "z": 19,
+      "attrs": {
+        "alternativeLabel": {
+          "text": ""
+        },
+        "data": {
+          "value": "Petición HTTP 1: Programación de cita",
+          "setField": true,
+          "fieldType": "predefinedField",
+          "currentVariableName": {
+            "type": "dynamic",
+            "name": "etapa_falla",
+            "isFlowField": true,
+            "keyword": "etapa_falla",
+            "displayModules": [],
+            "category": "flow_field",
+            "originComponent": "save_field",
+            "id": "c895138c-e686-4818-b19a-c816b99adb45"
+          }
+        },
+        "label": {
+          "text": "Guardar campo #3"
+        }
+      },
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "9abb4f8f-4bfc-4e5e-a349-b1be2bafbced"
+          },
+          {
+            "group": "default",
+            "category": "other",
+            "id": "bfa49a39-3603-4be9-a80a-7cb21d5ba537"
+          }
+        ]
+      },
+      "position": {
+        "x": -5584,
+        "y": 520
+      },
+      "cellId": "uqwfGIi9Ci8Rh5ZfNx9h",
+      "version": "1",
+      "id": "e09a0593-35ea-45c2-9041-440007dabdbf",
+      "wasOpened": false,
+      "size": {
+        "height": 72,
+        "width": 72
+      },
+      "type": "app.SaveField"
+    },
+    {
+      "z": -1,
+      "id": "9d1f5f6e-d40c-4a14-a0ee-2b395735e16a",
+      "target": {
+        "port": "34f9d0ef-a84e-4d94-8141-4b78a5a08f61",
+        "magnet": "portBody",
+        "id": "4601a005-1f71-4918-bb90-ba8018446b51"
+      },
+      "type": "app.Link",
+      "version": "1",
+      "attrs": {},
+      "labels": [
+        {
+          "attrs": {
+            "labelText": {
+              "text": ""
+            },
+            "jump": {
+              "data": {
+                "repetitions": 0,
+                "buttonChecked": false
+              }
+            }
+          },
+          "position": {
+            "distance": 0.25
+          }
+        }
+      ],
+      "source": {
+        "magnet": "portButton",
+        "port": "a7bcf49b-f820-4d31-9561-69a456ac2eee",
+        "id": "81d56844-b015-4c67-bffa-3f7c9b4a9801"
+      },
+      "cellId": "xbqyz3B3WZiIgEC9zkti"
+    },
+    {
+      "type": "app.HttpV2",
+      "position": {
+        "y": 888,
+        "x": -5408
+      },
+      "wasOpened": true,
+      "size": {
+        "width": 72,
+        "height": 72
+      },
+      "id": "d9eef934-9a65-4a7d-95a6-ea2e8bdffc84",
+      "attrs": {
+        "config": {
+          "body": true,
+          "headers": true
+        },
+        "http": {
+          "authConfig": {
+            "enabled": false,
+            "type": "NONE"
+          },
+          "data": {
+            "url": "https://script.google.com/macros/s/AKfycbyrvSKmaFBswwf9UrO4n8cHCfMPPbvFBjANXbq7Q7NDkqXYfckXOMsdj39gKrjrfVpA/exec",
+            "headers": [
+              {
+                "replaced": {
+                  "body": "application/json",
+                  "values": []
+                },
+                "key": "Content-Type",
+                "isSensitive": false,
+                "hasVariables": false,
+                "value": "application/json",
+                "id": "28c2605b-1a83-4dd9-9ae6-1bd567fe73ac"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "estudiante": "{{full_name}}",
+              "etapa": "{{flow_field.etapa_falla}}",
+              "force_plan_b": false,
+              "mensaje_error": "Interrupción del flujo {{flow_field.etapa_falla}}: El usuario no proporcionó los datos requeridos o la sesión expiró por inactividad.",
+              "tipo": "reporte_error",
+              "celular": "{{client.custom_telefono_estudiante}}",
+              "admin_email_override": "darkyx11@gmail.com"
+            }
+          },
+          "optionalFields": {
+            "body": {
+              "content": "",
+              "values": [],
+              "replaced": ""
+            },
+            "url": {
+              "values": [],
+              "replaced": "https://script.google.com/macros/s/AKfycbyrvSKmaFBswwf9UrO4n8cHCfMPPbvFBjANXbq7Q7NDkqXYfckXOMsdj39gKrjrfVpA/exec"
+            }
+          }
+        },
+        "label": {
+          "text": "Petición HTTP #2"
+        },
+        "alternativeLabel": {
+          "text": ""
+        }
+      },
+      "z": 20,
+      "ports": {
+        "items": [
+          {
+            "id": "cfa7b281-da91-4ffa-8903-ed011c9b734e",
+            "group": "in"
+          },
+          {
+            "group": "out",
+            "id": "b18e0188-8844-43e1-b441-10638f9347bd"
+          }
+        ]
+      },
+      "cellId": "z2XHu0o7msrLs7JC81Jn",
+      "version": "1"
+    }
+  ]
+}
