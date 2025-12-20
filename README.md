@@ -1,11 +1,103 @@
-🎓 Validador Técnico de Flujo UDF (Atom Flow)
-Este proyecto contiene una herramienta de automatización avanzada en Python diseñada por Jonnathan Peña como parte del ejercicio técnico solicitado por ATOM. Su objetivo es validar la integridad del archivo JSON exportado desde Atom Flowbuilder y verificar la resiliencia de la API de agendamiento (Caso T07).
+# 🎓 UDF Technical Audit Tool (Interactive CLI)
+**Autor:** Jonnathan Peña | **Desarrollado para:** ATOM (Prueba AI Specialist) | **Año:** 2025
 
-📊 Diagrama de Flujo del Proceso de Auditoría
+Este proyecto implementa una herramienta de auditoría automatizada en Python para validar la integridad y robustez de un flujo conversacional exportado de **Atom Flowbuilder**. Incluye una interfaz de línea de comandos (CLI) interactiva para facilitar la ejecución de pruebas en diferentes entornos.
+
+---
+
+## � Inicio Rápido
+
+El proyecto incluye scripts "inteligentes" que detectan tu sistema operativo, crean el entorno virtual (`venv`) e instalan las dependencias automáticamente.
+
+### 🍎 macOS / � Linux
+Abre tu terminal en la carpeta del proyecto y ejecuta:
+```bash
+./test_atom.sh
+```
+
+### 🪟 Windows
+Haz doble clic en el archivo `test_atom.bat` o ejecútalo desde CMD/PowerShell:
+```cmd
+test_atom.bat
+```
+
+> **Nota:** La primera ejecución puede tardar unos segundos mientras se instala `requests`. Las siguientes serán instantáneas.
+
+---
+
+## 🎮 Interfaz Interactiva (CLI)
+
+Al iniciar, verás un menú que te guiará en el proceso:
+
+### 1. Configuración de Correos 📧
+El sistema te pedirá dos correos (puedes presionar ENTER para usar los valores por defecto):
+- **Admin Email:** Recibe los reportes de error y alertas de soporte.
+- **Student Email:** Se usa para simular la reserva en el calendario.
+
+### 2. Modos de Auditoría ⚙️
+Selecciona qué escenario deseas auditar:
+
+*   **[1] ✅ MODO NORMAL:**
+    *   Simula un flujo exitoso donde la API funciona correctamente.
+    *   Verifica: Agendamiento en Google Calendar, Generación de PDF y envío de Correos.
+
+*   **[2] ⚠️  MODO FALLO (Prueba de Contingencia T07):**
+    *   Simula una caída del servicio de Google Calendar.
+    *   **Objetivo:** Verificar que el sistema active el **Plan B** (PDF de respaldo sin evento) y notifique a soporte.
+
+---
+
+## 🧪 Cobertura de Pruebas (T00 - T07)
+
+El script `atom_tests.py` ejecuta 8 casos de prueba críticos de forma secuencial:
+
+| Test ID | Nombre | Descripción y Validación |
+| :--- | :--- | :--- |
+| **T00** | **Validación de Prompts** | Analiza la integridad de los *Smartons*. <br>• **#1 Asesor:** Busca "Extracción de datos", "Base de conocimiento" y **Ejemplos de Carreras**. <br>• **#2 Agendar:** Verifica instrucciones mandatorias y pasos críticos (Hora). <br>• **#3 Post-Venta:** Verifica contexto y **Ejemplos Post-Venta**. |
+| **T01** | **Oferta Académica** | Verifica que el bot tenga conocimiento sobre carreras. Busca keywords como *"Carrera"*, *"Programas"*, *"Ingeniería"*. |
+| **T02** | **Requisitos** | Valida si el flujo responde a consultas de admisión (cédula, título, etc.). |
+| **T03** | **Agendamiento E2E** | (Solo Modo Normal) Prueba la integración real con Google Calendar y Drive (PDF). |
+| **T04** | **Captura de Contexto** | Confirma que variables críticas (`first_name`, `email`, `carrera_interes`) se guarden en memoria. |
+| **T05** | **Cambio de Opinión** | Simula un usuario cambiando de carrera a mitad del flujo y valida la actualización de la variable. |
+| **T06** | **Memoria** | Verifica que el bot mantenga el hilo de la conversación sin repetirse. |
+| **T07** | **Plan B (Resiliencia)** | (Solo Modo Fallo) Valida la respuesta ante errores: <br>✅ Detecta fallo controlado <br>✅ Genera PDF de contingencia <br>✅ Alerta a Soporte. |
+
+---
+
+## 📂 Estructura del Proyecto
+
+*   `audit_menu.py`: Script principal que maneja la interfaz de usuario.
+*   `atom_tests.py`: Núcleo lógico de las pruebas y validaciones.
+*   `test_atom.sh` / `test_atom.bat`: Launchers inteligentes multiplataforma.
+*   `requirements.txt`: Lista de dependencias (principalmente `requests`).
+*   `udf_flow_metadata.json`: Archivo fuente del flujo (Entrada de la auditoría).
+
+---
+
+## 📊 Diagrama de Flujo
 
 ```mermaid
 flowchart TD
-    A["🚀 Inicio: autom_tests.py"] --> B{"📂 Lectura de udf_flow_metadata.json"}
+    A("🚀 Launcher (.sh / .bat)") --> B["🖥️ audit_menu.py"]
+    B --> C{"⚙️ Selección de Modo"}
+    
+    C -- "Modo Normal" --> D["atom_tests.py"]
+    C -- "Modo Fallo" --> E["atom_tests.py --fail"]
+    
+    D --> F["🔍 T00-T06: Validaciones Estáticas"]
+    E --> F
+    
+    F --> G{"📡 T03/T07: Integración API"}
+    
+    G -- "Normal" --> H["✅ Agendamiento OK<br>(Calendar + PDF)"]
+    G -- "Fallo Simulado" --> I["⚠️ Plan B Activado<br>(PDF Respaldo + Alerta)"]
+```
+
+## 📊 Como Probamos la API de Google Apps Script
+
+```mermaid
+flowchart TD
+    A["🚀 Inicio: atom_tests.py"] --> B{"📂 Lectura de udf_flow_metadata.json"}
     
     B -- "✅ Archivo encontrado" --> C["Fase 1: Análisis de Smartons"]
     B -- "❌ No existe" --> X["⛔ Error: Detener Auditoría"]
@@ -53,77 +145,3 @@ flowchart TD
     style Q fill:#8BC34A,stroke:#689F38,color:black
     style R fill:#FFC107,stroke:#FFA000,color:black
 ```
-
-🛠️ Requisitos Previos
-Python 3.10+ instalado en tu sistema
-
-Archivo de metadatos udf_flow_metadata.json en la raíz del proyecto
-
-🚀 Configuración del Entorno
-1. Crear y Activar el Entorno Virtual
-bash
-# Crear entorno
-```
-python3 -m venv venv
-```
-
-# Activar en macOS/Linux:
-```
-source venv/bin/activate
-```
-
-# Activar en Windows:
-```
-.\venv\Scripts\activate
-```
-
-2. Instalar Dependencias
-Instalamos requests para la comunicación con la API de Google Apps Script:
-
-```
-pip3 install requests
-```
-
-🧪 Ejecución de las Pruebas
-El script permite varios modos de ejecución para validar los criterios técnicos:
-
-A. Prueba de Agendamiento Normal
-Valida que el flujo detecte el calendario y cree la cita correctamente.
-
-```
-python3 autom_tests.py
-```
-
-B. Simulación de Error de Agendamiento (Caso T07 - Plan B)
-Fuerza al backend a ignorar el calendario y activar la contingencia (PDF de emergencia).
-
-```
-python3 autom_tests.py --fail
-```
-
-C. Cambio de Correo Administrador
-Recibir el PDF de prueba en un correo distinto al configurado por defecto:
-
-```
-python3 autom_tests.py --admin tu-correo-aqui@gmail.com
-```
-
-📝 Configuración Interna
-Dentro del archivo autom_tests.py, puedes modificar la variable global para configurar el correo administrador por defecto:
-
-
-# Ubicación: Línea 33 aproximadamente
-```
-CORREO_ADMIN_CONFIGURADO = "tu-correo@ejemplo.com"
-```
-
-🔍 Criterios de Validación Técnica
-Smartons IA: Verifica que el flujo use los componentes de IA optimizados
-
-Contexto Persistente: Comprueba que variables como first_name, email y carrera_interes existan en la estructura
-
-Resiliencia (Plan B): Valida que ante un error, el sistema retorne un pdfLink y ejecute la lógica de notificación administrativa
-
-Desarrollado por: Jonnathan Peña
-Para: ATOM - Prueba AI Specialist
-Año: 2025
